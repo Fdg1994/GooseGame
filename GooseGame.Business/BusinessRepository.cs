@@ -11,31 +11,54 @@ namespace GooseGame.Business
 {
     public class BusinessRepository
     {
-        private DummyRepository dummyRepository;
-
-        public BusinessRepository()
-        {
-            dummyRepository = new DummyRepository();
-        }
-
-        public void AddDummy(DummyModel dummy)
+        public BusinessRepository() { }
+        
+        public void AddSquare(Square square)
         {
             //MAPPING (!)
-            Dummy newDummy = new Dummy
+            Square newSquare = new Square
             {
-                Age = dummy.Age,
-                FirstName = dummy.FirstName,
-                LastName = dummy.LastName
+                //????????????
+                Pos = square.Pos,
             };
-
-            dummyRepository.AddDummy(newDummy);
         }
 
-
-        //PUUR VOOR TEST
-        public DummyModel CreateDummyEntity()
+        public abstract class Player
         {
-            return new DummyModel { Age = 26, FirstName = "Ken", LastName = "Field", Id = 1 };
+            public int Id { get; set; }
+            public int Pos { get; set; }
+        }
+
+        public abstract class Square
+        {
+            public int Pos { get; set; }
+        }
+        public class GooseSquare : Square
+        {
+            public int TilesSkipped { get; set; }
+        }
+        public class SkipSquare : Square
+        {
+            public int TurnsSkipped { get; set; }
+        }
+
+        public abstract class Creator
+        {
+            public abstract Square Factory();
+        }
+        public class CreatorGoose : Creator
+        {
+            public override Square Factory()
+            {
+                return new GooseSquare();
+            }
+        }
+        public class CreatorSkip : Creator
+        {
+            public override Square Factory()
+            {
+            return new SkipSquare();
+            }
         }
     }
 }
