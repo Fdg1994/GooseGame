@@ -8,7 +8,7 @@ namespace GooseGame.Business.Squares
 {
     public class Goose : Default, ISquare
     {
-        public override void HandlePlayer(int tempRoll) //find a way to add tempRoll?
+        public override void HandlePlayer() //find a way to add tempRoll?
         {
             //use tempRoll and player.Pos to skip player equal number of squares as he rolled
         }

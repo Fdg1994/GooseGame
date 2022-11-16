@@ -1,6 +1,7 @@
 ﻿using System;
 using GooseGame.Business;
 using GooseGame.Business.Models;
+using GooseGame.Business.SquareFactory;
 using GooseGame.Business.Squares;
 
 public class Gameboard
@@ -8,56 +9,44 @@ public class Gameboard
     Player player1 = new Player();
     ISquare[] arraySquares = new ISquare[63];
     int[] arrayGooseSquares = new int[13] { 5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59 };
-    int[] arraySpecials = new int[7] { 6, 19, 31, 42, 52, 58, 63 };
-    
 
-    public void CheckGoose()
+
+    List<ISquare> Squares { get; set; } = new List<ISquare>();
+
+    public Gameboard()
     {
+        const int bridgeSquare = 6;
+        const int innSquare = 19;
+        const int wellSquare = 31;
+        const int mazeSquare = 42;
+        const int prisonSquare = 52;
+        const int deathSquare = 58;
+        const int endSquare = 63;
+
         for (int i = 0; i < arraySquares.Length; i++)
         {
-            if (player1.Pos == arrayGooseSquares[i])
-            {
-                //execute goose/skip
-            }
+            Squares.Add(SquareFactory.CreateSquare(SquareType.Default));
         }
-    }
-    public void CheckSpecials()
-    {
-        for (int i = 0; i < arraySpecials.Length; i++)
+
+        foreach(int i in arrayGooseSquares)
         {
-            if (player1.Pos == arraySpecials[i])
-            {
-                //execute specials
-            }
+            Squares.Add(SquareFactory.CreateSquare(SquareType.Goose));
         }
+
+        Squares[bridgeSquare - 1] = SquareFactory.CreateSquare(SquareType.Bridge);
+        Squares[innSquare - 1] = SquareFactory.CreateSquare(SquareType.Inn);
+        Squares[wellSquare - 1] = SquareFactory.CreateSquare(SquareType.Well);
+        Squares[mazeSquare - 1] = SquareFactory.CreateSquare(SquareType.Maze);
+        Squares[prisonSquare - 1] = SquareFactory.CreateSquare(SquareType.Prison);
+        Squares[deathSquare - 1] = SquareFactory.CreateSquare(SquareType.Death);
+        Squares[endSquare - 1] = SquareFactory.CreateSquare(SquareType.End);
+
     }
 
-    static void CheckType(int position)
+    public int RollDie() //need to implement first throw method and use 2 rolls to check the 5+4 and 6+3 thing
     {
-        
-        switch (position)
-        {
-            case 6:
-                player1.Pos = 12;
-                break;
-            case 19:
-                //skip 1 turn
-                break;
-            case 31:
-                //wait for other player
-                break;
-            case 42:
-                player1.Pos = 39;
-                break;
-            case 52:
-                //skip 3 turns
-                break;
-            case 58:
-                player1.Pos = 0;
-                break;
-            case 63:
-                //Wincon
-                break;
-        }
+        Random random = new Random();
+        var die = random.Next(1, 6);
+        return die;
     }
 }

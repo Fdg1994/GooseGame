@@ -2,7 +2,7 @@
 
 namespace GooseGame.Business.SquareFactory
 {
-    internal class SquareFactory
+    public class SquareFactory
     {
         public static ISquare CreateSquare(SquareType type)
         {

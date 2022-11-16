@@ -15,6 +15,11 @@ namespace GooseGame.Business
             player1.Pos += tempRoll;
             FinishLine(tempRoll);
         }
+        
+        public void CheckFirstThrow() //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
+        {
+
+        }
         public void FinishLine(int tempRoll)
         {
             if (player1.Pos + tempRoll == 63)
@@ -27,10 +32,6 @@ namespace GooseGame.Business
                 player1.Pos = 63 - movesBack;
 
             }
-        }
-        public void CheckFirstThrow() //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
-        {
-
         }
     }
 }
