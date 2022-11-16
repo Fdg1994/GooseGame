@@ -10,7 +10,7 @@ namespace GooseGame.Business.Squares
     {
         public override void HandlePlayer()
         {
-
+            //wait for other player to land on square, then resume movement
         }
     }
 }

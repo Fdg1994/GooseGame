@@ -10,8 +10,8 @@ namespace GooseGame.Business.Squares
     {
         public override void HandlePlayer()
         {
-
+            //hold player on current square for 3 turns
         }
-    
+
     }
 }

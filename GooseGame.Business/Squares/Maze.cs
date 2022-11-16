@@ -10,7 +10,7 @@ namespace GooseGame.Business.Squares
     {
         public override void HandlePlayer()
         {
-
+            //put player.Pos at 39
         }
     
     }

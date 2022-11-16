@@ -8,12 +8,15 @@ namespace GooseGame.Business
 {
     internal class GameLogic
     {
-        int tempRoll;
         Player player1 = new Player();
-        public void ChangePlayerPosition()
+        int tempRoll;
+        public void ChangePlayerPosition(int tempRoll)
         {
-            tempRoll = player1.RollDie();
-
+            player1.Pos += tempRoll;
+            FinishLine(tempRoll);
+        }
+        public void FinishLine(int tempRoll)
+        {
             if (player1.Pos + tempRoll == 63)
             {
                 //WinCon
@@ -24,6 +27,9 @@ namespace GooseGame.Business
                 player1.Pos = 63 - movesBack;
 
             }
+        }
+        public void CheckFirstThrow() //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
+        {
 
         }
     }

@@ -8,7 +8,6 @@ namespace GooseGame.Business.Squares
 {
     internal enum SquareType
     {
-
         Inn = 19,
         Prison = 52,
         Well = 31,
