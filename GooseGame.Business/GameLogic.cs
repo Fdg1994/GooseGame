@@ -1,37 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business
+﻿namespace GooseGame.Business
 {
-    internal class GameLogic
+    internal class Game
     {
-        Player player1 = new Player();
-        int tempRoll;
-        public void ChangePlayerPosition(int tempRoll)
-        {
-            player1.Pos += tempRoll;
-            FinishLine(tempRoll);
-        }
-        
-        public void CheckFirstThrow() //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
-        {
+        public List<Player>? Winners { get; set; }
+        public List<Player>? Players { get; set; }
 
-        }
-        public void FinishLine(int tempRoll)
+        public Game(Gameboard gameboard,List<Player> players)
         {
-            if (player1.Pos + tempRoll == 63)
+            gameboard = Gameboard.GetInstance();
+            players = AddPlayers();
+        }
+        public void StartGame()
+        {
+            Gameboard.GetInstance();
+            AddPlayers();
+            while (Players?.Count != 0)
             {
-                //WinCon
+                foreach (Player player in Players)
+                {
+                    if(player.IsTurn == true)
+                    {
+                        Console.WriteLine($"Your turn,{player.Name}! Press any button to roll the dice");
+                        Console.WriteLine($"{player.Name} rolls the dice...");                       
+                        CheckThrow(player, player.RollDie());
+                    }
+                }
+            }
+        }
+        public void CheckThrow(Player player, int[] dice) //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
+        {
+            if(player.FirstThrow == true)
+            {
+                if (dice[0] == 5 && dice[1] == 4 || dice[0] == 4 && dice[1] == 5)
+                {
+                    player.SetPlayerPosition(26);
+                }
+                else if (dice[0] == 6 && dice[1] == 3 || dice[0] == 3 && dice[1] == 6)
+                {
+                    player.SetPlayerPosition(53);
+                }
             }
             else
             {
-                int movesBack = player1.Pos + tempRoll - 63;
-                player1.Pos = 63 - movesBack;
-
+                player.MovePlayer(dice[0] + dice[1]);
             }
+            player.Turns++;
+        }
+
+        private List<Player> AddPlayers(int numberOfPlayers = 1)
+        {
+            for(int i = 1; i < numberOfPlayers; i++)
+            {
+                Players.Add(new Player());
+                Console.WriteLine($"Hello player {i}! Enter your name please:");
+                Players[i].Name = Console.ReadLine().ToUpper();
+            }
+            return Players;
         }
     }
 }

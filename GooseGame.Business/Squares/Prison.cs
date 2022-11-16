@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business.Squares
+﻿namespace GooseGame.Business.Squares
 {
-    internal class Prison : Default, ISquare
-    {
-        public override void HandlePlayer()
+    internal class Prison : ISquare
+    {       
+        public void HandlePlayer(Player player)
         {
-            //hold player on current square for 3 turns
-        }
+            while (player.Turns < )
+            {
 
+            }
+        }
     }
 }

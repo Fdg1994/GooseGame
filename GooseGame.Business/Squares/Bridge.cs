@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business.Squares
+﻿namespace GooseGame.Business.Squares
 {
     public class Bridge : Default, ISquare
     {
-        public override void HandlePlayer()
+        public void HandlePlayer(Player player)
         {
-            //put player.Pos to 12
+            Console.WriteLine("Wow! A bridge! Get to square 12!");
+            player.SetPlayerPosition(12);
         }
     }
 }

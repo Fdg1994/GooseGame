@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business.Squares
+﻿namespace GooseGame.Business.Squares
 {
-    internal class Inn : Default, ISquare
+    internal class Inn : ISquare
     {
-        public override void HandlePlayer()
+        public void HandlePlayer(Player player)
         {
-            //hold player on current square for 1 turn
+
         }
     }
 }

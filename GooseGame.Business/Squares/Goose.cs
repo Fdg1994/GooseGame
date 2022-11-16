@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business.Squares
+﻿namespace GooseGame.Business.Squares
 {
-    public class Goose : Default, ISquare
+    public class Goose : ISquare
     {
-        public override void HandlePlayer() //find a way to add tempRoll?
+        public void HandlePlayer(Player player)
         {
-            //use tempRoll and player.Pos to skip player equal number of squares as he rolled
+            Console.WriteLine("A goose! You can go twice as far!");
+            player.Position += player.Position - player.PreviousPosition;
         }
     }
 }
