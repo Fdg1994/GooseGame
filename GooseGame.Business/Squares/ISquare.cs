@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GooseGame.Business
+namespace GooseGame.Business.Squares
 {
-    internal class BusinessRepository
+    public interface ISquare
     {
-
+        public void HandlePlayer();
     }
 }

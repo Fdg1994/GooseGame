@@ -24,12 +24,12 @@ namespace GooseGame.Presentation.WPF
     {
         public MainWindow()
         {
-            InitializeComponent();
+            /*InitializeComponent();
 
             BusinessRepository game = new BusinessRepository();
             DummyModel dummy = game.CreateDummyEntity();
             MessageBox.Show(dummy.Talk());
-            game.AddDummy(dummy);
+            game.AddDummy(dummy);*/
         }
     }
 }
