@@ -1,0 +1,71 @@
+﻿<Window x:Class="Goose_Game.Highscores"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Highscores" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Lenovo\Documents\Oefeningen\OOP\Goose Game\Goose Game\Images\ParchmentLabel2.png" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+            </ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition>
+            </RowDefinition>
+            <RowDefinition>
+            </RowDefinition>
+            <RowDefinition>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Background="Transparent" BorderBrush="Transparent" FontSize="20" VerticalAlignment="Center" Click="BackHighscores_Click" Grid.Row="2" Grid.Column="1" FontFamily="Segoe Script">
+            Back
+        </Button>
+        <Label Grid.Row="0" Grid.Column="0" FontSize="40" Grid.ColumnSpan="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="Bold" FontFamily="Segoe Script">
+            Highscores
+        </Label>
+        <TextBlock Grid.Row="1" Grid.Column="1" FontFamily="Segoe Script">
+            1. FREDERIK:    999 999 999
+            <LineBreak></LineBreak>
+            2. GLENN:       999 999 998
+            <LineBreak></LineBreak>
+
+            3. DRIES:       1
+        </TextBlock>
+        <Button
+            Click="Mute"
+            Name="BtnMute"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+                Background="Transparent"
+             BorderBrush="Transparent"
+                Grid.Column="14"
+                Grid.Row="10"
+                Grid.RowSpan="1" Height="44" Width="51">
+
+            <Image Source="C:\Users\Lenovo\Documents\Oefeningen\OOP\Goose Game\Goose Game\Images\Mute button.png" Height="56" Width="51">
+            </Image>
+        </Button>
+        <Button
+            Click="Play"
+            Name="BtnPlay"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            BorderBrush="Transparent"
+                Background="Transparent"
+                Grid.Column="2"
+                Grid.Row="10"
+                Grid.RowSpan="1" Height="74" Width="51">
+
+            <Image Source="C:\Users\Lenovo\Documents\Oefeningen\OOP\Goose Game\Goose Game\Images\play.png">
+            </Image>
+        </Button>
+    </Grid>
+</Window>

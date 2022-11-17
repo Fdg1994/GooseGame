@@ -1,35 +1,34 @@
-﻿using GooseGame.Business;
-using GooseGame.Business.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Media;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace GooseGame.Presentation.WPF
+namespace Goose_Game
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
+        private SoundPlayer player = new SoundPlayer(@"C:\Users\Lenovo\Documents\Oefeningen\OOP\Goose Game\Goose Game\Music\midnight-123895.wav");
         public MainWindow()
         {
-            /*InitializeComponent();
+            InitializeComponent();
+            player.PlayLooping();
+            BtnPlay.Visibility = Visibility.Collapsed;
+        }
 
-            BusinessRepository game = new BusinessRepository();
-            DummyModel dummy = game.CreateDummyEntity();
-            MessageBox.Show(dummy.Talk());
-            game.AddDummy(dummy);*/
+        private void Mute(object sender, RoutedEventArgs e)
+        {
+            player.Stop();
+            BtnPlay.Visibility = Visibility.Visible;
+            BtnMute.Visibility = Visibility.Collapsed;
+        }
+
+        private void Play(object sender, RoutedEventArgs e)
+        {
+            player.PlayLooping();
+            BtnPlay.Visibility = Visibility.Collapsed;
+            BtnMute.Visibility = Visibility.Visible;
         }
     }
 }
