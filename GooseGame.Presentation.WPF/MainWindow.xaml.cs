@@ -9,18 +9,18 @@ namespace Goose_Game
 
     public partial class MainWindow : Window
     {
-        private SoundPlayer player = new SoundPlayer(@"/midnight-123895.wav");
+        //public static SoundPlayer player = new SoundPlayer(@"/midnight-123895.wav");
 
         public MainWindow()
         {
             InitializeComponent();
-            player.PlayLooping();
+            //player.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
         }
 
         private void Mute(object sender, RoutedEventArgs e)
         {
-            player.Stop();
+            //player.Stop();
             BtnPlay.Visibility = Visibility.Visible;
             BtnMute.Visibility = Visibility.Collapsed;
         }
@@ -28,7 +28,7 @@ namespace Goose_Game
 
         private void Play(object sender, RoutedEventArgs e)
         {
-            player.PlayLooping();
+            //player.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
             BtnMute.Visibility = Visibility.Visible;
         }

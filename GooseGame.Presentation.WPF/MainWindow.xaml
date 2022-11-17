@@ -8,7 +8,7 @@
         WindowState="Maximized">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Prison break project (NO ROLL).png" />
+            <ImageBrush ImageSource="Images/Prison break project (NO ROLL).png" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="24*">
@@ -58,10 +58,10 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image Name="Player1" Source="/PLAYER1.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player2" Source="/PLAYER2.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player3" Source="/PLAYER3.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player4" Source="/PLAYER4.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Image Name="Player1" Source="/Images/PLAYER1.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Image Name="Player2" Source="/Images/PLAYER2.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Image Name="Player3" Source="/Images/PLAYER3.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Image Name="Player4" Source="/Images/PLAYER4.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
 
         <Button
@@ -73,7 +73,7 @@
                 Grid.Row="9"
                 Grid.RowSpan="3" Margin="16,0,6,21">
 
-            <Image Source="/Final Roll Button.png" Height="78" Width="190">
+            <Image Source="/Images/Final Roll Button.png" Height="78" Width="190">
             </Image>
         </Button>
         <Label
@@ -106,7 +106,7 @@
                 Grid.Row="10"
                 Grid.RowSpan="1">
 
-            <Image Source="/Mute button.png">
+            <Image Source="/Images/Mute button.png">
             </Image>
         </Button>
         <Button
@@ -120,7 +120,7 @@
                 Grid.Row="10"
                 Grid.RowSpan="1">
 
-            <Image Source="/play.png">
+            <Image Source="/Images/play.png">
             </Image>
         </Button>
     </Grid>
