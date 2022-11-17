@@ -21,12 +21,12 @@ namespace Goose_Game
     public partial class MainMenu : Window
     {
 
-        public static SoundPlayer player = new SoundPlayer(@"C:\Users\Frederik\Source\Repos\GooseGame\GooseGame.Presentation.WPF\Music\creepy-music-box-halloween-music-horror-scary-spooky-dark-ambient-118577.wav");
+        //public static SoundPlayer player = new SoundPlayer(@"\Music\creepy-music-box-halloween-music-horror-scary-spooky-dark-ambient-118577.wav");
 
 
         public MainMenu()
         {
-            player.PlayLooping();
+           //player.PlayLooping();
             InitializeComponent();
             BtnPlay.Visibility = Visibility.Collapsed;
         }
@@ -40,14 +40,14 @@ namespace Goose_Game
 
         private void Mute(object sender, RoutedEventArgs e)
         {
-            player.Stop();
+            //player.Stop();
             BtnPlay.Visibility = Visibility.Visible;
             BtnMute.Visibility = Visibility.Collapsed;
         }
 
         private void Play(object sender, RoutedEventArgs e)
         {
-            player.PlayLooping();
+            //player.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
             BtnMute.Visibility = Visibility.Visible;
         }

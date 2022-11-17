@@ -29,14 +29,14 @@ namespace Goose_Game
 
         private void Mute(object sender, RoutedEventArgs e)
         {
-            MainMenu.player.Stop();
+            //MainMenu.player.Stop();
             BtnPlay.Visibility = Visibility.Visible;
             BtnMute.Visibility = Visibility.Collapsed;
         }
 
         private void Play(object sender, RoutedEventArgs e)
         {
-            MainMenu.player.PlayLooping();
+            //MainMenu.player.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
             BtnMute.Visibility = Visibility.Visible;
         }
