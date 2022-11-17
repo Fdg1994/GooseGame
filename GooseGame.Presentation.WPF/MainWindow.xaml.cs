@@ -9,7 +9,7 @@ namespace Goose_Game
 
     public partial class MainWindow : Window
     {
-        private SoundPlayer player = new SoundPlayer(@"C:\Users\Lenovo\Documents\Oefeningen\OOP\Goose Game\Goose Game\Music\midnight-123895.wav");
+        private SoundPlayer player = new SoundPlayer(@"/midnight-123895.wav");
 
         public MainWindow()
         {

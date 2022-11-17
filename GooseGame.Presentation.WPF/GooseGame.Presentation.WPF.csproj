@@ -8,7 +8,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Final Roll Button.png" />
+    <None Remove="Mute button.png" />
+    <None Remove="play.png" />
+    <None Remove="PLAYER1.png" />
+    <None Remove="PLAYER2.png" />
+    <None Remove="PLAYER3.png" />
+    <None Remove="PLAYER4.png" />
+    <None Remove="Prison break project %28NO ROLL%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GooseGame.Business\GooseGame.Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Final Roll Button.png" />
+    <Resource Include="Mute button.png" />
+    <Resource Include="play.png" />
+    <Resource Include="PLAYER1.png" />
+    <Resource Include="PLAYER2.png" />
+    <Resource Include="PLAYER3.png" />
+    <Resource Include="PLAYER4.png" />
+    <Resource Include="Prison break project (NO ROLL).png" />
   </ItemGroup>
 
 </Project>
