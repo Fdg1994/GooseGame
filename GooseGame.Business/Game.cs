@@ -2,8 +2,8 @@
 {
     internal class Game
     {
-        public List<Player>? Winners { get; set; }
         public List<Player>? Players { get; set; }
+        public static int Turns { get; set; }
 
         public Game(Gameboard gameboard, List<Player> players)
         {
