@@ -16,6 +16,7 @@
             <ColumnDefinition Width="398*">
             </ColumnDefinition>
             <ColumnDefinition Width="197*">
+
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -38,6 +39,7 @@
         </Button>
         <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="55" FontFamily="Segoe Script" FontWeight="Bold" Grid.ColumnSpan="3" Grid.Column="0">
             Prison Escape
+            
         </Label>
         <Button
             Click="Mute"

@@ -25,6 +25,7 @@ namespace Goose_Game
             BtnMute.Visibility = Visibility.Collapsed;
         }
 
+
         private void Play(object sender, RoutedEventArgs e)
         {
             player.PlayLooping();
