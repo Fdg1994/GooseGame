@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business.Squares
+﻿namespace GooseGame.Business.Squares
 {
-    internal class End : Default, ISquare
+    internal class End : ISquare
     {
-        public override void HandlePlayer()
+        public void HandlePlayer(Player player)
         {
-            //Wincon
+            Console.WriteLine("You made it!");
         }
-    
     }
 }

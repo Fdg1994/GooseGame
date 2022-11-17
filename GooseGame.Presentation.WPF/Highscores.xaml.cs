@@ -1,3 +1,5 @@
+
+﻿using System.Windows;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,7 @@ namespace Goose_Game
             InitializeComponent();
             BtnPlay.Visibility = Visibility.Collapsed;
         }
+
         private void Mute(object sender, RoutedEventArgs e)
         {
             MainMenu.player.Stop();

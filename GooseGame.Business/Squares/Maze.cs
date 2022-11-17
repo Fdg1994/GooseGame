@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business.Squares
+﻿namespace GooseGame.Business.Squares
 {
-    internal class Maze : Default, ISquare
+    internal class Maze : ISquare
     {
-        public override void HandlePlayer()
+        public void HandlePlayer(Player player)
         {
-            //put player.Pos at 39
+            player.SetPlayerPosition(39);
         }
-    
     }
 }

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business.Squares
+﻿namespace GooseGame.Business.Squares
 {
-    public class Well : Default, ISquare
+    public class Well : ISquare
     {
-        public override void HandlePlayer()
+        public void HandlePlayer(Player player)
         {
-            //wait for other player to land on square, then resume movement
         }
     }
 }

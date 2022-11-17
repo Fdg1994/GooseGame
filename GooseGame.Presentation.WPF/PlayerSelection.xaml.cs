@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 
 namespace Goose_Game
 {
@@ -30,12 +31,14 @@ namespace Goose_Game
             mainWindow.Show();
             Close();
         }
+
         private void Player_Click3(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
         }
+
         private void Player_Click4(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -43,4 +46,6 @@ namespace Goose_Game
             Close();
         }
     }
+
 }
+

@@ -4,6 +4,5 @@
              xmlns:local="clr-namespace:Goose_Game"
              StartupUri="MainMenu.xaml">
     <Application.Resources>
-         
     </Application.Resources>
 </Application>

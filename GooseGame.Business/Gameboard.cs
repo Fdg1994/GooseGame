@@ -1,19 +1,25 @@
-﻿using System;
-using GooseGame.Business;
-using GooseGame.Business.Models;
-using GooseGame.Business.SquareFactory;
+﻿using GooseGame.Business.SquareFactory;
 using GooseGame.Business.Squares;
 
 public class Gameboard
 {
-    Player player1 = new Player();
-    ISquare[] arraySquares = new ISquare[63];
-    int[] arrayGooseSquares = new int[13] { 5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59 };
+    private ISquare[] arraySquares = new ISquare[63];
+    private int[] arrayGooseSquares = new int[13] { 5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59 };
 
+    public List<ISquare> Squares { get; set; } = new List<ISquare>();
 
-    List<ISquare> Squares { get; set; } = new List<ISquare>();
+    private static Gameboard _instance;
 
-    public Gameboard()
+    public static Gameboard GetInstance()
+    {
+        if (_instance == null)
+        {
+            _instance = new Gameboard();
+        }
+        return _instance;
+    }
+
+    private Gameboard()
     {
         const int bridgeSquare = 6;
         const int innSquare = 19;
@@ -28,7 +34,7 @@ public class Gameboard
             Squares.Add(SquareFactory.CreateSquare(SquareType.Default));
         }
 
-        foreach(int i in arrayGooseSquares)
+        foreach (int i in arrayGooseSquares)
         {
             Squares.Add(SquareFactory.CreateSquare(SquareType.Goose));
         }
@@ -40,13 +46,5 @@ public class Gameboard
         Squares[prisonSquare - 1] = SquareFactory.CreateSquare(SquareType.Prison);
         Squares[deathSquare - 1] = SquareFactory.CreateSquare(SquareType.Death);
         Squares[endSquare - 1] = SquareFactory.CreateSquare(SquareType.End);
-
-    }
-
-    public int RollDie() //need to implement first throw method and use 2 rolls to check the 5+4 and 6+3 thing
-    {
-        Random random = new Random();
-        var die = random.Next(1, 6);
-        return die;
     }
 }

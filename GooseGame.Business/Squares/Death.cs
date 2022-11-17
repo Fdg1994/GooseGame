@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GooseGame.Business.Squares
+﻿namespace GooseGame.Business.Squares
 {
-    public class Death : Default, ISquare
+    public class Death : ISquare
     {
-        public override void HandlePlayer()
+        public void HandlePlayer(Player player)
         {
-            //put player.Pos at 0
+            Console.WriteLine("You died! Back to square one!");
+            player.SetPlayerPosition(0);
         }
     }
 }

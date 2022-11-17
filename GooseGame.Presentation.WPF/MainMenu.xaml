@@ -12,10 +12,8 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="205*">
-
             </ColumnDefinition>
             <ColumnDefinition Width="398*">
-
             </ColumnDefinition>
             <ColumnDefinition Width="197*">
 
@@ -23,16 +21,12 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition>
-
             </RowDefinition>
             <RowDefinition>
-
             </RowDefinition>
             <RowDefinition>
-
             </RowDefinition>
             <RowDefinition>
-
             </RowDefinition>
         </Grid.RowDefinitions>
         <Button Background="Transparent" BorderBrush="Transparent" FontSize="40"
@@ -45,7 +39,7 @@
         </Button>
         <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="55" FontFamily="Segoe Script" FontWeight="Bold" Grid.ColumnSpan="3" Grid.Column="0">
             Prison Escape
-
+            
         </Label>
         <Button
             Click="Mute"
@@ -75,6 +69,5 @@
             <Image Source="C:\Users\Lenovo\Documents\Oefeningen\OOP\Goose Game\Goose Game\Images\play.png" Height="51" Width="54">
             </Image>
         </Button>
-
     </Grid>
 </Window>
