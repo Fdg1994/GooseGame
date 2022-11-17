@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace GooseGame.Presentation.WPF
+namespace Goose_Game
 {
     /// <summary>
     /// Interaction logic for App.xaml

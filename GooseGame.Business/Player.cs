@@ -4,10 +4,9 @@ public class Player
 {
     public int Id { get; set; }
     public int Position { get; set; }
-    public bool FirstThrow { get; set ; }
-    public bool HasWon { get; set ; }
+    public bool FirstThrow { get; set; }
+    public bool HasWon { get; set; }
     public bool IsTurn { get; set; }
-    public int Turns { get; set; }
     public int PreviousPosition { get; set; }
     public string Name { get; set; }
 
@@ -16,6 +15,7 @@ public class Player
         FirstThrow = true;
         IsTurn = true;
     }
+
     public int[] RollDie() //need to implement first throw method and use 2 rolls to check the 5+4 and 6+3 thing
     {
         Random random = new Random();
@@ -36,7 +36,14 @@ public class Player
     public void MovePlayer(int roll)
     {
         PreviousPosition = Position;
-        Position += roll;
+        if (Position + roll > 63)
+        {
+            Position = 63 - (roll - (63 - Position));
+        }
+        else
+        {
+            Position += roll;
+        }
         CurrentSquare.HandlePlayer(this);
     }
 

@@ -4,7 +4,6 @@
     {
         public void HandlePlayer(Player player)
         {
-
         }
     }
 }
