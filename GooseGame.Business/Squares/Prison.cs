@@ -4,6 +4,7 @@
     {
         public void HandlePlayer(Player player)
         {
+
             player.Skips = 3;
             if (player.Skips > 0)
             {
