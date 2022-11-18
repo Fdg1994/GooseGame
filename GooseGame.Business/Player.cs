@@ -9,9 +9,11 @@ public class Player
     public bool IsTurn { get; set; }
     public int PreviousPosition { get; set; }
     public string Name { get; set; }
+    public int Skips { get; set; }
 
     public Player()
     {
+        Skips=0;
         FirstThrow = true;
         IsTurn = true;
     }
