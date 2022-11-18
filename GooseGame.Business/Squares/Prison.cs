@@ -4,7 +4,7 @@
     {
         public void HandlePlayer(Player player)
         {
-           
+            player.TurnsSkip = 3;
         }
     }
 }

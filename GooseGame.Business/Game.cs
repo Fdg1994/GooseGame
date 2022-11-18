@@ -15,15 +15,20 @@
         {
             Gameboard.GetInstance();
             AddPlayers();
-            while (Players?.Count != 1)
+            while ()
             {
                 foreach (Player player in Players)
                 {
-                    if (player.IsTurn == true)
+                    if (player.TurnsSkip == 0)
                     {
                         Console.WriteLine($"Your turn,{player.Name}! Press any button to roll the dice");
                         Console.WriteLine($"{player.Name} rolls the dice...");
                         CheckThrow(player, player.RollDie());
+                    }
+                    else if(player.TurnsSkip > 0)
+                    {
+                        player.TurnsSkip--;
+                        Console.WriteLine($"You're stuck! for {player.TurnsSkip} more turns!");
                     }
                 }
             }
@@ -47,6 +52,15 @@
                 player.MovePlayer(dice[0] + dice[1]);
             }
             player.FirstThrow = false;
+        }
+
+        private void CheckWin(Player player)
+        {
+            if(player.Position == 63)
+            {
+                Console.WriteLine("you won!");
+                 
+            }
         }
 
         private List<Player> AddPlayers(int numberOfPlayers = 2)
