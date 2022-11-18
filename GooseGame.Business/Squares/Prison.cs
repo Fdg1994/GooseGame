@@ -4,6 +4,7 @@
     {
         public void HandlePlayer(Player player)
         {
+            player.IsTurn = false;
         }
     }
 }
