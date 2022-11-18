@@ -24,7 +24,10 @@ namespace GooseGame.Business.SquareFactory
                     {
                         return new Maze();
                     }
-
+                case SquareType.Default:
+                    {
+                        return new Default();
+                    }
                 case SquareType.Prison:
                     {
                         return new Prison();

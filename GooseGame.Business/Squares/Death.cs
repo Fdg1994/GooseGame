@@ -5,7 +5,7 @@
         public void HandlePlayer(Player player)
         {
             Console.WriteLine("You died! Back to square one!");
-            player.SetPlayerPosition(0);
+            player.SetPlayerPosition(1);
         }
     }
 }

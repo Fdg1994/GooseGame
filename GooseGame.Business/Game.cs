@@ -1,36 +1,38 @@
 ﻿namespace GooseGame.Business
 {
-    internal class Game
+    public class Game
     {
         public List<Player>? Players { get; set; }
         public static int Turns { get; set; }
+        public static bool IsDone { get; set; }
 
-        public Game(Gameboard gameboard, List<Player> players)
+        public Game()
         {
-            gameboard = Gameboard.GetInstance();
-            players = AddPlayers();
+            Players = new List<Player>();      
         }
 
         public void StartGame()
         {
-            Gameboard.GetInstance();
-            AddPlayers();
-            while ()
+            Players = AddPlayers();
+
+            while(IsDone == false)
             {
                 foreach (Player player in Players)
                 {
                     if (player.TurnsSkip == 0)
                     {
-                        Console.WriteLine($"Your turn,{player.Name}! Press any button to roll the dice");
+                        Console.WriteLine($"Your turn,{player.Name}! Press any button to roll the dice. Current position: {player.Position}");
                         Console.WriteLine($"{player.Name} rolls the dice...");
                         CheckThrow(player, player.RollDie());
+                        
                     }
                     else if(player.TurnsSkip > 0)
                     {
                         player.TurnsSkip--;
-                        Console.WriteLine($"You're stuck! for {player.TurnsSkip} more turns!");
+                        Console.WriteLine($"You're stuck! for {player.TurnsSkip+1} more turns!");
                     }
                 }
+                Turns++;
             }
         }
 
@@ -54,18 +56,10 @@
             player.FirstThrow = false;
         }
 
-        private void CheckWin(Player player)
+        
+        private List<Player> AddPlayers(int numberOfPlayers = 1)
         {
-            if(player.Position == 63)
-            {
-                Console.WriteLine("you won!");
-                 
-            }
-        }
-
-        private List<Player> AddPlayers(int numberOfPlayers = 2)
-        {
-            for (int i = 1; i < numberOfPlayers; i++)
+            for (int i = 0; i < numberOfPlayers; i++)
             {
                 Players.Add(new Player());
                 Console.WriteLine($"Hello player {i}! Enter your name please:");

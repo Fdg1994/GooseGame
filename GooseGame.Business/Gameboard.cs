@@ -5,7 +5,7 @@ public class Gameboard
 {
     private ISquare[] arraySquares = new ISquare[63];
     private int[] arrayGooseSquares = new int[13] { 5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59 };
-
+    
     public List<ISquare> Squares { get; set; } = new List<ISquare>();
 
     private static Gameboard _instance;
@@ -39,12 +39,12 @@ public class Gameboard
             Squares.Add(SquareFactory.CreateSquare(SquareType.Goose));
         }
 
-        Squares[bridgeSquare - 1] = SquareFactory.CreateSquare(SquareType.Bridge);
-        Squares[innSquare - 1] = SquareFactory.CreateSquare(SquareType.Inn);
-        Squares[wellSquare - 1] = SquareFactory.CreateSquare(SquareType.Well);
-        Squares[mazeSquare - 1] = SquareFactory.CreateSquare(SquareType.Maze);
-        Squares[prisonSquare - 1] = SquareFactory.CreateSquare(SquareType.Prison);
-        Squares[deathSquare - 1] = SquareFactory.CreateSquare(SquareType.Death);
-        Squares[endSquare - 1] = SquareFactory.CreateSquare(SquareType.End);
+        Squares[bridgeSquare] = SquareFactory.CreateSquare(SquareType.Bridge);
+        Squares[innSquare] = SquareFactory.CreateSquare(SquareType.Inn);
+        Squares[wellSquare] = SquareFactory.CreateSquare(SquareType.Well);
+        Squares[mazeSquare] = SquareFactory.CreateSquare(SquareType.Maze);
+        Squares[prisonSquare] = SquareFactory.CreateSquare(SquareType.Prison);
+        Squares[deathSquare] = SquareFactory.CreateSquare(SquareType.Death);
+        Squares[endSquare] = SquareFactory.CreateSquare(SquareType.End);
     }
 }
