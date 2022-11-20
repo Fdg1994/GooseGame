@@ -1,6 +1,6 @@
 ﻿namespace GooseGame.Business.Squares
 {
-    public interface ISquare
+    public interface ISquare // TODO? String voor square message + methode die string returnt voor display?
     {
         public void HandlePlayer(Player player);
     }

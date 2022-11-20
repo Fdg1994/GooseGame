@@ -4,7 +4,8 @@
     {
         public void HandlePlayer(Player player)
         {
-            Console.WriteLine("A goose! You can go twice as far!");
+            string gooseSquareString = "A goose! You can go twice as far!";
+            Console.WriteLine(gooseSquareString);
 
             player.MovePlayer(player.CurrentRoll);
         }

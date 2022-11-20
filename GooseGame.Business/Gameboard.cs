@@ -8,7 +8,7 @@ public class Gameboard
 
     public List<ISquare> Squares { get; set; } = new List<ISquare>();
 
-    private static Gameboard _instance;
+    private static Gameboard? _instance;
 
     public static Gameboard GetInstance()
     {

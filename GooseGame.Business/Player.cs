@@ -17,7 +17,7 @@ public class Player
         Position = 1;
     }
 
-    public int[] RollDie() //need to implement first throw method and use 2 rolls to check the 5+4 and 6+3 thing
+    public int[] RollDie()
     {
         Random random = new Random();
         int[] dice = new int[2];
@@ -39,10 +39,10 @@ public class Player
     public void MovePlayer(int roll)
     {
         PreviousPosition = Position;
-        if (Position + roll > 63)
+        if (Position + roll > 63) //If player roll + position exceeds 63, the player will move until he hits 63 and then move in reverse for the remaining roll numbers.
         {
             Position = 63 - (roll - (63 - Position));
-            CurrentRoll = -CurrentRoll;
+            CurrentRoll = -CurrentRoll; //Player will move twice as much backwards if he hits a goose in reverse.
         }
         else
         {

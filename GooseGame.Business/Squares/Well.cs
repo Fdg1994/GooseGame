@@ -4,7 +4,8 @@
     {
         public void HandlePlayer(Player player)
         {
-            Console.WriteLine("You fell in a well!");
+            string wellSquareString = "You fell in a well!";
+            Console.WriteLine(wellSquareString);
             player.StuckInWell = true;
         }
     }

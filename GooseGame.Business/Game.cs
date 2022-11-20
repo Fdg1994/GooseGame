@@ -26,8 +26,10 @@
             {
                 if (CheckIfStuck(player) == false)
                 {
-                    Console.WriteLine($"Your turn,{player.Name}! Press any button to roll the dice. Current position: {player.Position}");
-                    Console.WriteLine($"{player.Name} rolls the dice...");
+                    string playerTurnString = $"Your turn,{player.Name}! Press any button to roll the dice. Current position: {player.Position}";
+                    Console.WriteLine(playerTurnString);
+                    string rollDiceString = $"{player.Name} rolls the dice...";
+                    Console.WriteLine(rollDiceString);
                     CheckThrow(player, player.RollDie());
                 }
             }
@@ -58,7 +60,7 @@
             player.FirstThrow = false;
         }
 
-        public bool CheckIfStuck(Player player)
+        private bool CheckIfStuck(Player player)
         {
             if (player.TurnsSkip == 0 && player.StuckInWell == false)
             {
@@ -76,19 +78,24 @@
             }
         }
 
-        private void HandleWell(Player player)
+        private string HandleWell(Player player) //Checks if player is stuck in well and ensures that he remains there until another player hits the well square.
         {
             foreach (Player p in Players)
             {
                 p.StuckInWell = false;
             }
             player.StuckInWell = true;
+            string wellString = $"Im sure someone will come for you eventually, {player.Name}";
+            Console.WriteLine(wellString);
+            return wellString;
         }
 
-        private void HandleSkipTurn(Player player)
+        private string HandleSkipTurn(Player player)
         {
             player.TurnsSkip--;
-            Console.WriteLine($"{player.Name}, you're stuck! for {player.TurnsSkip + 1} more turn(s)!");
+            string turnSkipString = $"{player.Name}, you're stuck! for {player.TurnsSkip + 1} more turn(s)!";
+            Console.WriteLine(turnSkipString);
+            return turnSkipString;
         }
 
         private List<Player> AddPlayers(int numberOfPlayers = 3)
@@ -96,7 +103,8 @@
             for (int i = 0; i < numberOfPlayers; i++)
             {
                 Players.Add(new Player());
-                Console.WriteLine($"Hello player {i + 1}! Enter your name please:");
+                string askNameString = $"Hello player {i + 1}! Enter your name please:";
+                Console.WriteLine(askNameString);
                 Players[i].Name = Console.ReadLine().ToUpper();
             }
             return Players;
