@@ -1,5 +1,4 @@
-﻿using System.Media;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Goose_Game
 {
@@ -24,7 +23,6 @@ namespace Goose_Game
             BtnPlay.Visibility = Visibility.Visible;
             BtnMute.Visibility = Visibility.Collapsed;
         }
-
 
         private void Play(object sender, RoutedEventArgs e)
         {

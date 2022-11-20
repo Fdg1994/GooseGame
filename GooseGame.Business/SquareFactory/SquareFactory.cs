@@ -40,6 +40,10 @@ namespace GooseGame.Business.SquareFactory
                     {
                         return new End();
                     }
+                case SquareType.Goose:
+                    {
+                        return new Goose();
+                    }
                 default:
                     return null!;
             }

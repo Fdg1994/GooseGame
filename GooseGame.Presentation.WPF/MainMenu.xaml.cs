@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Goose_Game
 {
@@ -20,13 +7,11 @@ namespace Goose_Game
     /// </summary>
     public partial class MainMenu : Window
     {
-
         //public static SoundPlayer player = new SoundPlayer(@"\Music\creepy-music-box-halloween-music-horror-scary-spooky-dark-ambient-118577.wav");
-
 
         public MainMenu()
         {
-           //player.PlayLooping();
+            //player.PlayLooping();
             InitializeComponent();
             BtnPlay.Visibility = Visibility.Collapsed;
         }
@@ -59,6 +44,4 @@ namespace Goose_Game
             Close();
         }
     }
-
 }
-

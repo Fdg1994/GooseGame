@@ -5,6 +5,8 @@ public class Player
     public int Id { get; set; }
     public int Position { get; set; }
     public bool FirstThrow { get; set; }
+    public bool StuckInWell { get; set; }
+    public int CurrentRoll { get; set; }
     public int TurnsSkip { get; set; }
     public int PreviousPosition { get; set; }
     public string Name { get; set; }
@@ -22,6 +24,7 @@ public class Player
         dice[0] = random.Next(1, 6);
         dice[1] = random.Next(1, 6);
         Console.WriteLine($"Rolled a {dice[0]} and {dice[1]}");
+        CurrentRoll = dice[0] + dice[1];
         return dice;
     }
 
@@ -39,6 +42,7 @@ public class Player
         if (Position + roll > 63)
         {
             Position = 63 - (roll - (63 - Position));
+            CurrentRoll = -CurrentRoll;
         }
         else
         {

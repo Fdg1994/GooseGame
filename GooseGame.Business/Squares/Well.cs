@@ -4,7 +4,8 @@
     {
         public void HandlePlayer(Player player)
         {
-            player.TurnsSkip = 1;
+            Console.WriteLine("You fell in a well!");
+            player.StuckInWell = true;
         }
     }
 }

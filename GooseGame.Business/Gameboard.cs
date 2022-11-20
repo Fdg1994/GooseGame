@@ -3,9 +3,9 @@ using GooseGame.Business.Squares;
 
 public class Gameboard
 {
-    private ISquare[] arraySquares = new ISquare[63];
+    private ISquare[] arraySquares = new ISquare[64];
     private int[] arrayGooseSquares = new int[13] { 5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59 };
-    
+
     public List<ISquare> Squares { get; set; } = new List<ISquare>();
 
     private static Gameboard _instance;
@@ -31,12 +31,14 @@ public class Gameboard
 
         for (int i = 0; i < arraySquares.Length; i++)
         {
-            Squares.Add(SquareFactory.CreateSquare(SquareType.Default));
-        }
-
-        foreach (int i in arrayGooseSquares)
-        {
-            Squares.Add(SquareFactory.CreateSquare(SquareType.Goose));
+            if (arrayGooseSquares.Contains(i))
+            {
+                Squares.Add(SquareFactory.CreateSquare(SquareType.Goose));
+            }
+            else
+            {
+                Squares.Add(SquareFactory.CreateSquare(SquareType.Default));
+            }
         }
 
         Squares[bridgeSquare] = SquareFactory.CreateSquare(SquareType.Bridge);
