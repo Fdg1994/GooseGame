@@ -1,35 +1,42 @@
 ﻿namespace GooseGame.Business
 {
-    internal class Game
+    public class Game
     {
         public List<Player>? Players { get; set; }
         public static int Turns { get; set; }
+        public static bool IsDone { get; set; }
 
-        public Game(Gameboard gameboard, List<Player> players)
+        public Game()
         {
-            gameboard = Gameboard.GetInstance();
-            players = AddPlayers();
+            Players = new List<Player>();
+            Players = AddPlayers();
         }
 
         public void StartGame()
         {
-            Gameboard.GetInstance();
-            AddPlayers();
-            while (Players?.Count != 1)
+            while (IsDone == false)
             {
-                foreach (Player player in Players)
-                {
-                    if (player.IsTurn == true)
-                    {
-                        Console.WriteLine($"Your turn,{player.Name}! Press any button to roll the dice");
-                        Console.WriteLine($"{player.Name} rolls the dice...");
-                        CheckThrow(player, player.RollDie());
-                    }
-                }
+                HandleTurns(Players);
             }
         }
 
-        public void CheckThrow(Player player, int[] dice) //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
+        private void HandleTurns(List<Player>? Players)
+        {
+            foreach (Player player in Players)
+            {
+                if (CheckIfStuck(player) == false)
+                {
+                    string playerTurnString = $"Your turn,{player.Name}! Press any button to roll the dice. Current position: {player.Position}";
+                    Console.WriteLine(playerTurnString);
+                    string rollDiceString = $"{player.Name} rolls the dice...";
+                    Console.WriteLine(rollDiceString);
+                    CheckThrow(player, player.RollDie());
+                }
+            }
+            Turns++;
+        }
+
+        private void CheckThrow(Player player, int[] dice) //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
         {
             if (player.FirstThrow == true)
             {
@@ -41,6 +48,10 @@
                 {
                     player.SetPlayerPosition(53);
                 }
+                else
+                {
+                    player.MovePlayer(dice[0] + dice[1]);
+                }
             }
             else
             {
@@ -49,12 +60,51 @@
             player.FirstThrow = false;
         }
 
-        private List<Player> AddPlayers(int numberOfPlayers = 2)
+        private bool CheckIfStuck(Player player)
         {
-            for (int i = 1; i < numberOfPlayers; i++)
+            if (player.TurnsSkip == 0 && player.StuckInWell == false)
+            {
+                return false;
+            }
+            else if (player.StuckInWell == true)
+            {
+                HandleWell(player);
+                return true;
+            }
+            else
+            {
+                HandleSkipTurn(player);
+                return true;
+            }
+        }
+
+        private string HandleWell(Player player) //Checks if player is stuck in well and ensures that he remains there until another player hits the well square.
+        {
+            foreach (Player p in Players)
+            {
+                p.StuckInWell = false;
+            }
+            player.StuckInWell = true;
+            string wellString = $"Im sure someone will come for you eventually, {player.Name}";
+            Console.WriteLine(wellString);
+            return wellString;
+        }
+
+        private string HandleSkipTurn(Player player)
+        {
+            player.TurnsSkip--;
+            string turnSkipString = $"{player.Name}, you're stuck! for {player.TurnsSkip + 1} more turn(s)!";
+            Console.WriteLine(turnSkipString);
+            return turnSkipString;
+        }
+
+        private List<Player> AddPlayers(int numberOfPlayers = 3)
+        {
+            for (int i = 0; i < numberOfPlayers; i++)
             {
                 Players.Add(new Player());
-                Console.WriteLine($"Hello player {i}! Enter your name please:");
+                string askNameString = $"Hello player {i + 1}! Enter your name please:";
+                Console.WriteLine(askNameString);
                 Players[i].Name = Console.ReadLine().ToUpper();
             }
             return Players;

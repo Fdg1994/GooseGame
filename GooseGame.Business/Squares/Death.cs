@@ -4,8 +4,9 @@
     {
         public void HandlePlayer(Player player)
         {
-            Console.WriteLine("You died! Back to square one!");
-            player.SetPlayerPosition(0);
+            string deathSquareString = "You got lost in the maze!";
+            Console.WriteLine(deathSquareString);
+            player.SetPlayerPosition(1);
         }
     }
 }

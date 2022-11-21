@@ -4,13 +4,9 @@
     {
         public void HandlePlayer(Player player)
         {
-
-            player.Skips = 3;
-            if (player.Skips > 0)
-            {
-                player.IsTurn = false;
-                player.Skips--;
-            }
+            string prisonSquareString = "STOP RIGHT THERE CRIMINAL SCUM!";
+            Console.WriteLine(prisonSquareString);
+            player.TurnsSkip = 3;
         }
     }
 }

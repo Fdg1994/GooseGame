@@ -24,7 +24,10 @@ namespace GooseGame.Business.SquareFactory
                     {
                         return new Maze();
                     }
-
+                case SquareType.Default:
+                    {
+                        return new Default();
+                    }
                 case SquareType.Prison:
                     {
                         return new Prison();
@@ -36,6 +39,10 @@ namespace GooseGame.Business.SquareFactory
                 case SquareType.End:
                     {
                         return new End();
+                    }
+                case SquareType.Goose:
+                    {
+                        return new Goose();
                     }
                 default:
                     return null!;

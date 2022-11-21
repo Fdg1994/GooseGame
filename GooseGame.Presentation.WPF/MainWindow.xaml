@@ -63,7 +63,6 @@
         <Image Name="Player3" Source="/Images/PLAYER3.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
         <Image Name="Player4" Source="/Images/PLAYER4.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
-
         <Button
             HorizontalAlignment="Center"
             VerticalAlignment="Center"

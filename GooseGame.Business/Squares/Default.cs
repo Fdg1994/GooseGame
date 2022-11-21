@@ -4,7 +4,8 @@
     {
         public void HandlePlayer(Player player)
         {
-            Console.WriteLine("Nothing happens...");
+            string defaultSquareString = "Nothing happens...";
+            Console.WriteLine(defaultSquareString);
         }
     }
 }

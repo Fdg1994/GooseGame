@@ -4,12 +4,9 @@
     {
         public void HandlePlayer(Player player)
         {
-            player.Skips = 1;
-            if (player.Skips > 0)
-            {
-                player.IsTurn = false;
-                player.Skips--;
-            }
+            string innSquareString = "You stop for a drink";
+            Console.WriteLine(innSquareString);
+            player.TurnsSkip = 1;
         }
     }
 }

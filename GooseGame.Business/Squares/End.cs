@@ -4,7 +4,10 @@
     {
         public void HandlePlayer(Player player)
         {
-            Console.WriteLine("You made it!");
+            string endSquareString = $"Well done {player.Name} You made it in {Game.Turns}!";
+            Console.WriteLine(endSquareString);
+            Console.ReadLine();
+            Game.IsDone = true;
         }
     }
 }
