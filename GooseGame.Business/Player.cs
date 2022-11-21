@@ -14,7 +14,7 @@ public class Player
 
     public Player()
     {
-        Skips=0;
+        Skips = 0;
         FirstThrow = true;
         Position = 1;
     }
