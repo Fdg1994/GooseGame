@@ -29,6 +29,7 @@
     <None Remove="Images\PLAYER4.png" />
     <None Remove="Images\Prison break project %28NO ROLL%29.png" />
     <None Remove="Images\Prison break project empty.png" />
+    <None Remove="Images\PrisonBreakMap.png" />
     <None Remove="Images\ROLL %282%29.png" />
     <None Remove="Images\Roll button.png" />
     <None Remove="Images\—Pngtree—old parchment scroll texture_5496789.png" />
@@ -105,6 +106,9 @@
     <Resource Include="Images\Prison break project empty.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\PrisonBreakMap.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\ROLL (2).png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -114,15 +118,30 @@
     <Resource Include="Images\—Pngtree—old parchment scroll texture_5496789.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Music\creepy-music-box-halloween-music-horror-scary-spooky-dark-ambient-118577.wav">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Music\dungeon_ambient_1.wav">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Music\midnight-123895.wav">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    <Content Include="Music\creepy-music-box-halloween-music-horror-scary-spooky-dark-ambient-118577.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Music\dungeon_ambient_1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Music\midnight-123895.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
