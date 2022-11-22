@@ -1,6 +1,6 @@
 ﻿using GooseGame.Business.Squares;
 
-public class Player
+public class PlayerModel
 {
     public int Id { get; set; }
     public int Position { get; set; }
@@ -12,7 +12,7 @@ public class Player
     public string Name { get; set; }
    
 
-    public Player()
+    public PlayerModel()
     {
         FirstThrow = true;
         Position = 1;

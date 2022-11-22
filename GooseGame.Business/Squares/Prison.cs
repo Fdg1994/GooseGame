@@ -2,7 +2,7 @@
 {
     internal class Prison : ISquare
     {
-        public void HandlePlayer(Player player)
+        public void HandlePlayer(PlayerModel player)
         {
             string prisonSquareString = "STOP RIGHT THERE CRIMINAL SCUM!";
             Console.WriteLine(prisonSquareString);

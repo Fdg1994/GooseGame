@@ -23,14 +23,14 @@ namespace GooseGame.Presentation.WPF.ViewModels
             game.Players?[id].SetPlayerPosition(pos);
         }
 
-        public List<PlayerModel> GetPlayerList()
+        public List<Models.PlayerModel> GetPlayerList()
         {
-            List<PlayerModel> players = new List<PlayerModel>();
+            List<Models.PlayerModel> players = new List<Models.PlayerModel>();
 
-            foreach (Player player in game.Players)
+            foreach (PlayerModel player in game.Players)
             {
                 //We "mappen" van "object 1" zijn properties naar "object 2".
-                players.Add(new PlayerModel
+                players.Add(new Models.PlayerModel
                 {
                     Id = player.Id,
                     Name = player.Name,

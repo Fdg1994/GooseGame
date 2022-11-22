@@ -2,7 +2,7 @@
 {
     internal class Inn : ISquare
     {
-        public void HandlePlayer(Player player)
+        public void HandlePlayer(PlayerModel player)
         {
             string innSquareString = "You stop for a drink";
             Console.WriteLine(innSquareString);

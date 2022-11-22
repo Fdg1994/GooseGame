@@ -15,7 +15,7 @@ namespace GooseGame.Data.Entities
         [Required]
         [MaxLength(20)]
         public string Name { get; set; }
-        public GameEntity GamesPlayed { get; set; }
-        public Player_SpecialSquareHitEntity SpecialSquaresHit { get; set; }
+        public List<GameEntity> GamesPlayed { get; set; }
+        public ICollection<Player_SpecialSquareHitEntity> SpecialSquaresHit { get; set; }
     }
 }

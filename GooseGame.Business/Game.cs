@@ -1,29 +1,43 @@
-﻿namespace GooseGame.Business
+﻿using GooseGame.Data.NewEntities;
+using GooseGame.Data.Repository;
+using GooseGame.Data.Services;
+
+namespace GooseGame.Business
 {
     public class Game
     {
+        BaseRepository _repo;
+        BusinessService service = new BusinessService();
         public int Id { get; set; }
-        public List<Player>? Players { get; set; }
+        public List<PlayerModel>? Players { get; set; }
         public static int Turns { get; set; }
         public static bool IsDone { get; set; }
-
+        public DateTime StartDateTime { get; set; }
+        public TimeOnly EndTime { get; set; }
+        public PlayerModel Winner { get; set; }
         public Game()
         {
-            Players = new List<Player>();
+            _repo = new();
+            Players = new List<PlayerModel>();
             Players = AddPlayers();
         }
 
         public void StartGame()
         {
+            _repo.AddPlayer(new Player
+            {
+                Name = "Ken"
+            });
+
             while (IsDone == false)
             {
                 HandleTurns(Players);
             }
         }
 
-        private void HandleTurns(List<Player>? Players)
+        private void HandleTurns(List<PlayerModel>? Players)
         {
-            foreach (Player player in Players)
+            foreach (PlayerModel player in Players)
             {
                 if (CheckIfStuck(player) == false)
                 {
@@ -37,7 +51,7 @@
             Turns++;
         }
 
-        private void CheckThrow(Player player, int[] dice) //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
+        private void CheckThrow(PlayerModel player, int[] dice) //Make method to check first throw die (5 + 4 = go to 26; 6 + 3 = go to 53)
         {
             if (player.FirstThrow == true)
             {
@@ -61,7 +75,7 @@
             player.FirstThrow = false;
         }
 
-        private bool CheckIfStuck(Player player)
+        private bool CheckIfStuck(PlayerModel player)
         {
             if (player.TurnsSkip == 0 && player.StuckInWell == false)
             {
@@ -79,9 +93,9 @@
             }
         }
 
-        private string HandleWell(Player player) //Checks if player is stuck in well and ensures that he remains there until another player hits the well square.
+        private string HandleWell(PlayerModel player) //Checks if player is stuck in well and ensures that he remains there until another player hits the well square.
         {
-            foreach (Player p in Players)
+            foreach (PlayerModel p in Players)
             {
                 p.StuckInWell = false;
             }
@@ -91,7 +105,7 @@
             return wellString;
         }
 
-        private string HandleSkipTurn(Player player)
+        private string HandleSkipTurn(PlayerModel player)
         {
             player.TurnsSkip--;
             string turnSkipString = $"{player.Name}, you're stuck! for {player.TurnsSkip + 1} more turn(s)!";
@@ -99,14 +113,12 @@
             return turnSkipString;
         }
 
-        private List<Player> AddPlayers(int numberOfPlayers = 3)
+        private List<PlayerModel> AddPlayers(int numberOfPlayers = 3)
         {
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                Players.Add(new Player());
-                string askNameString = $"Hello player {i + 1}! Enter your name please:";
-                Console.WriteLine(askNameString);
-                Players[i].Name = $"TEST {i}"; //Console.ReadLine().ToUpper();
+                Players.Add(service.GetPlayer());
+                string askNameString = $"Hello player {Players[i].Name}!";
             }
             return Players;
         }

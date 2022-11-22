@@ -1,3 +1,4 @@
+using GooseGame.Business;
 using System.Windows;
 
 namespace Goose_Game

@@ -2,6 +2,6 @@
 {
     public interface ISquare // TODO? String voor square message + methode die string returnt voor display?
     {
-        public void HandlePlayer(Player player);
+        public void HandlePlayer(PlayerModel player);
     }
 }
