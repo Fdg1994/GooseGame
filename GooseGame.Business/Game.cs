@@ -1,14 +1,20 @@
-﻿namespace GooseGame.Business
+﻿using GooseGame.Data.Services;
+
+namespace GooseGame.Business
 {
     public class Game
     {
+        BusinessService service = new BusinessService();
         public int Id { get; set; }
         public List<Player>? Players { get; set; }
         public static int Turns { get; set; }
         public static bool IsDone { get; set; }
-
+        public DateTime StartDateTime { get; set; }
+        public TimeOnly EndTime { get; set; }
+        public Player Winner { get; set; }
         public Game()
         {
+            
             Players = new List<Player>();
             Players = AddPlayers();
         }
@@ -103,10 +109,8 @@
         {
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                Players.Add(new Player());
-                string askNameString = $"Hello player {i + 1}! Enter your name please:";
-                Console.WriteLine(askNameString);
-                Players[i].Name = $"TEST {i}"; //Console.ReadLine().ToUpper();
+                Players.Add(service.GetPlayer());
+                string askNameString = $"Hello player {Players[i].Name}!";
             }
             return Players;
         }

@@ -11,7 +11,7 @@ namespace GooseGame.Data.Entities
     {
         [Key]
         public int Id { get; set; }
-        public PlayerEntity PlayerHitInfo { get; set; }
+        public ICollection<PlayerEntity> PlayersHitInfo { get; set; }
         public int SquareNumberHit { get; set; }
         public DateTime DateAndTimeHit { get; set; }
     }

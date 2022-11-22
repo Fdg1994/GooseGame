@@ -10,6 +10,10 @@ namespace GooseGame.Data.Database
             options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=GooseGame;Trusted_Connection=True;");
         }
 
+
+
         public DbSet<PlayerEntity> Players { get; set; }
+        public DbSet<GameEntity> Games { get; set; }
+        public DbSet<Player_SpecialSquareHitEntity> SpecialSquareHits { get; set; }
     }
 }
