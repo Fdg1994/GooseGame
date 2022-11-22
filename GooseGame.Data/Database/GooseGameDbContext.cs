@@ -1,4 +1,4 @@
-﻿using GooseGame.Data.Entities;
+﻿
 using GooseGame.Data.NewEntities;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +8,7 @@ namespace GooseGame.Data.Database
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=GooseGameVoorFrederik;Trusted_Connection=True;");
+            options.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=your database name;Integrated Security=True;Trust Server Certificate=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

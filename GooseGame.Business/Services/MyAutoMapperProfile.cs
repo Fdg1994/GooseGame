@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using GooseGame.Data.Entities;
+using GooseGame.Data.NewEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,7 @@ namespace GooseGame.Data.Services
     {
         public MyAutoMapperProfile()
         {
-            CreateMap<PlayerEntity, PlayerModel>()
-                .ForMember(x => x.Name, y => y.MapFrom(z => z.Name))
-                .ReverseMap();
+            CreateMap<PlayerModel, Player>();
         }
     }
 }

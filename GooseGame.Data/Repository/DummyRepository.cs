@@ -1,5 +1,4 @@
 ﻿using GooseGame.Data.Database;
-using GooseGame.Data.Entities;
 using GooseGame.Data.NewEntities;
 
 namespace GooseGame.Data.Repository

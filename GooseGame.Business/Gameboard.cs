@@ -1,6 +1,6 @@
 ﻿using GooseGame.Business.SquareFactory;
 using GooseGame.Business.Squares;
-using GooseGame.Data.Entities;
+using GooseGame.Data.NewEntities;
 
 public class Gameboard
 {

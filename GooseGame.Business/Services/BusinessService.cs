@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
-using GooseGame.Data.Entities;
+using GooseGame.Data.NewEntities;
+using GooseGame.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace GooseGame.Data.Services
 {
@@ -19,21 +21,21 @@ namespace GooseGame.Data.Services
         {
             mapper = config.CreateMapper();
         }
-        private PlayerEntity GetPlayerFromDB()
+        public PlayerModel GetPlayerModel()
         {
-            return new PlayerEntity
+            return new PlayerModel
             {
-                Name = "Default",
+                Name = Console.ReadLine(),
             };
         }
 
-        public PlayerModel GetPlayer()
+        public Player GetPlayerModelToDB()
         {
-            var entity = GetPlayerFromDB();
+            var model = GetPlayerModel();
 
-            var model = mapper.Map<PlayerModel>(entity);
-
-            return model;
+            var entity = mapper.Map<Player>(model);
+            
+            return entity;
         }
     }
 }
