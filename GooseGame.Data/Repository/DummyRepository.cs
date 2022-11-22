@@ -7,9 +7,9 @@ namespace GooseGame.Data.Repository
     {
         private GooseGameDbContext ctx = new GooseGameDbContext();
 
-        public void AddDummy(Dummy dummy)
+        public void AddDummy(PlayerEntity player)
         {
-            ctx.Dummies.Add(dummy);
+            ctx.Players.Add(player);
             ctx.SaveChanges();
         }
     }

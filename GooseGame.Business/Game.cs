@@ -2,6 +2,7 @@
 {
     public class Game
     {
+        public int Id { get; set; }
         public List<Player>? Players { get; set; }
         public static int Turns { get; set; }
         public static bool IsDone { get; set; }
@@ -105,7 +106,7 @@
                 Players.Add(new Player());
                 string askNameString = $"Hello player {i + 1}! Enter your name please:";
                 Console.WriteLine(askNameString);
-                Players[i].Name = Console.ReadLine().ToUpper();
+                Players[i].Name = $"TEST {i}"; //Console.ReadLine().ToUpper();
             }
             return Players;
         }
