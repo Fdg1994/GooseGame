@@ -106,7 +106,7 @@
                 Players.Add(new Player());
                 string askNameString = $"Hello player {i + 1}! Enter your name please:";
                 Console.WriteLine(askNameString);
-                Players[i].Name = Console.ReadLine().ToUpper();
+                Players[i].Name = $"TEST {i}"; //Console.ReadLine().ToUpper();
             }
             return Players;
         }

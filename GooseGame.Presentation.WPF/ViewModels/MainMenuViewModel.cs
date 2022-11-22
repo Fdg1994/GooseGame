@@ -44,7 +44,7 @@ namespace GooseGame.Presentation.WPF.ViewModels
         //DUMMY
         public void DoeIets()
         {
-            //game.StartGame();
+            game.StartGame();
             MessageBox.Show("Hello world!");
         }
     }
