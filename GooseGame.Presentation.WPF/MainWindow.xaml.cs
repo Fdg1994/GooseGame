@@ -10,25 +10,25 @@ namespace Goose_Game
 
     public partial class MainWindow : Window
     {
-        public static SoundPlayer player = new SoundPlayer(GooseGame.Presentation.WPF.Properties.Resources.midnight_123895);
+        public static SoundPlayer soundPlayer = new SoundPlayer(GooseGame.Presentation.WPF.Properties.Resources.midnight_123895);
 
         public MainWindow()
         {
             InitializeComponent();
-            player.PlayLooping();
+            soundPlayer.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
         }
 
         private void Mute(object sender, RoutedEventArgs e)
         {
-            player.Stop();
+            soundPlayer.Stop();
             BtnPlay.Visibility = Visibility.Visible;
             BtnMute.Visibility = Visibility.Collapsed;
         }
 
         private void Play(object sender, RoutedEventArgs e)
         {
-            player.PlayLooping();
+            soundPlayer.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
             BtnMute.Visibility = Visibility.Visible;
         }

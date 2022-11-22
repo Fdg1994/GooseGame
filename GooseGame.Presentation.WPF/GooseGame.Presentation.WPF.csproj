@@ -8,34 +8,40 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\1Player button.png" />
-    <None Remove="Images\2player button.png" />
-    <None Remove="Images\3Player button.png" />
-    <None Remove="Images\4player button.png" />
-    <None Remove="Images\Final Roll Button.png" />
-    <None Remove="Images\Highscores button.png" />
-    <None Remove="Images\Mute button.png" />
-    <None Remove="Images\ParchmentLabel.png" />
-    <None Remove="Images\ParchmentLabel2.png" />
-    <None Remove="Images\Pawn.png" />
-    <None Remove="Images\pb highscores.png" />
-    <None Remove="Images\pb play.png" />
-    <None Remove="Images\pb title.png" />
-    <None Remove="Images\Play button.png" />
-    <None Remove="Images\play.png" />
-    <None Remove="Images\PLAYER1.png" />
-    <None Remove="Images\PLAYER2.png" />
-    <None Remove="Images\PLAYER3.png" />
-    <None Remove="Images\PLAYER4.png" />
-    <None Remove="Images\Prison break project %28NO ROLL%29.png" />
-    <None Remove="Images\Prison break project empty.png" />
-    <None Remove="Images\PrisonBreakMap.png" />
-    <None Remove="Images\ROLL %282%29.png" />
-    <None Remove="Images\Roll button.png" />
-    <None Remove="Images\—Pngtree—old parchment scroll texture_5496789.png" />
-    <None Remove="Music\creepy-music-box-halloween-music-horror-scary-spooky-dark-ambient-118577.wav" />
-    <None Remove="Music\dungeon_ambient_1.wav" />
-    <None Remove="Music\midnight-123895.wav" />
+    <None Remove="Final Roll Button.png" />
+    <None Remove="Mute button.png" />
+    <None Remove="ParchmentLabel2.png" />
+    <None Remove="play.png" />
+    <None Remove="PLAYER1.png" />
+    <None Remove="PLAYER2.png" />
+    <None Remove="PLAYER3.png" />
+    <None Remove="PLAYER4.png" />
+    <None Remove="PrisonBreakMap.png" />
+    <None Remove="Resources\Images\1Player button.png" />
+    <None Remove="Resources\Images\2player button.png" />
+    <None Remove="Resources\Images\3Player button.png" />
+    <None Remove="Resources\Images\4player button.png" />
+    <None Remove="Resources\Images\Final Roll Button.png" />
+    <None Remove="Resources\Images\Highscores button.png" />
+    <None Remove="Resources\Images\Mute button.png" />
+    <None Remove="Resources\Images\ParchmentLabel.png" />
+    <None Remove="Resources\Images\ParchmentLabel2.png" />
+    <None Remove="Resources\Images\Pawn.png" />
+    <None Remove="Resources\Images\pb highscores.png" />
+    <None Remove="Resources\Images\pb play.png" />
+    <None Remove="Resources\Images\pb title.png" />
+    <None Remove="Resources\Images\Play button.png" />
+    <None Remove="Resources\Images\play.png" />
+    <None Remove="Resources\Images\PLAYER1.png" />
+    <None Remove="Resources\Images\PLAYER2.png" />
+    <None Remove="Resources\Images\PLAYER3.png" />
+    <None Remove="Resources\Images\PLAYER4.png" />
+    <None Remove="Resources\Images\Prison break project %28NO ROLL%29.png" />
+    <None Remove="Resources\Images\Prison break project empty.png" />
+    <None Remove="Resources\Images\PrisonBreakMap.png" />
+    <None Remove="Resources\Images\ROLL %282%29.png" />
+    <None Remove="Resources\Images\Roll button.png" />
+    <None Remove="Resources\Images\—Pngtree—old parchment scroll texture_5496789.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,90 +49,90 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\1Player button.png">
+    <Resource Include="Final Roll Button.png" />
+    <Resource Include="Mute button.png" />
+    <Resource Include="ParchmentLabel2.png" />
+    <Resource Include="play.png" />
+    <Resource Include="PLAYER1.png" />
+    <Resource Include="PLAYER2.png" />
+    <Resource Include="PLAYER3.png" />
+    <Resource Include="PLAYER4.png" />
+    <Resource Include="PrisonBreakMap.png" />
+    <Resource Include="Resources\Images\1Player button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\2player button.png">
+    <Resource Include="Resources\Images\2player button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\3Player button.png">
+    <Resource Include="Resources\Images\3Player button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\4player button.png">
+    <Resource Include="Resources\Images\4player button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Final Roll Button.png">
+    <Resource Include="Resources\Images\Final Roll Button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Highscores button.png">
+    <Resource Include="Resources\Images\Highscores button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Mute button.png">
+    <Resource Include="Resources\Images\Mute button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\ParchmentLabel.png">
+    <Resource Include="Resources\Images\ParchmentLabel.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\ParchmentLabel2.png">
+    <Resource Include="Resources\Images\ParchmentLabel2.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Pawn.png">
+    <Resource Include="Resources\Images\Pawn.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\pb highscores.png">
+    <Resource Include="Resources\Images\pb highscores.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\pb play.png">
+    <Resource Include="Resources\Images\pb play.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\pb title.png">
+    <Resource Include="Resources\Images\pb title.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Play button.png">
+    <Resource Include="Resources\Images\Play button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\play.png">
+    <Resource Include="Resources\Images\play.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\PLAYER1.png">
+    <Resource Include="Resources\Images\PLAYER1.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\PLAYER2.png">
+    <Resource Include="Resources\Images\PLAYER2.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\PLAYER3.png">
+    <Resource Include="Resources\Images\PLAYER3.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\PLAYER4.png">
+    <Resource Include="Resources\Images\PLAYER4.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Prison break project (NO ROLL).png">
+    <Resource Include="Resources\Images\Prison break project (NO ROLL).png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Prison break project empty.png">
+    <Resource Include="Resources\Images\Prison break project empty.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\PrisonBreakMap.png">
+    <Resource Include="Resources\Images\PrisonBreakMap.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\ROLL (2).png">
+    <Resource Include="Resources\Images\ROLL (2).png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Roll button.png">
+    <Resource Include="Resources\Images\Roll button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\—Pngtree—old parchment scroll texture_5496789.png">
+    <Resource Include="Resources\Images\—Pngtree—old parchment scroll texture_5496789.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Content Include="Music\creepy-music-box-halloween-music-horror-scary-spooky-dark-ambient-118577.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Music\dungeon_ambient_1.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Music\midnight-123895.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>

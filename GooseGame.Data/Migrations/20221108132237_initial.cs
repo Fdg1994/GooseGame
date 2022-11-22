@@ -11,18 +11,16 @@ namespace GooseGame.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Dummies",
+                name: "Players",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Age = table.Column<int>(type: "int", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Dummies", x => x.Id);
+                    table.PrimaryKey("PK_Players", x => x.Id);
                 });
         }
 
@@ -30,7 +28,7 @@ namespace GooseGame.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Dummies");
+                name: "Players");
         }
     }
 }

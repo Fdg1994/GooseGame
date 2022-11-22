@@ -10,11 +10,10 @@ public class Player
     public int TurnsSkip { get; set; }
     public int PreviousPosition { get; set; }
     public string Name { get; set; }
-    public int Skips { get; set; }
+   
 
     public Player()
     {
-        Skips = 0;
         FirstThrow = true;
         Position = 1;
     }

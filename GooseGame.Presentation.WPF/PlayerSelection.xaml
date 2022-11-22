@@ -7,7 +7,7 @@
         Title="PlayerSelection" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Images/ParchmentLabel2.png" />
+            <ImageBrush ImageSource="/ParchmentLabel2.png" />
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="205*">
