@@ -2,7 +2,7 @@
 {
     internal class End : ISquare
     {
-        public void HandlePlayer(Player player)
+        public void HandlePlayer(PlayerModel player)
         {
             string endSquareString = $"Well done {player.Name} You made it in {Game.Turns}!";
             Console.WriteLine(endSquareString);

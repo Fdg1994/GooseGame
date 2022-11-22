@@ -12,9 +12,8 @@ namespace GooseGame.Data.Services
     {
         public MyAutoMapperProfile()
         {
-            CreateMap<PlayerEntity, Player>()
+            CreateMap<PlayerEntity, PlayerModel>()
                 .ForMember(x => x.Name, y => y.MapFrom(z => z.Name))
-                
                 .ReverseMap();
         }
     }

@@ -2,7 +2,7 @@
 {
     public class Default : ISquare
     {
-        public void HandlePlayer(Player player)
+        public void HandlePlayer(PlayerModel player)
         {
             string defaultSquareString = "Nothing happens...";
             Console.WriteLine(defaultSquareString);

@@ -17,7 +17,7 @@ namespace Goose_Game
         
         public static SoundPlayer soundPlayer = new SoundPlayer(GooseGame.Presentation.WPF.Properties.Resources.creepy_music_box_halloween_music_horror_scary_spooky_dark_ambient_118577);
         MainMenuViewModel vm;
-        List<PlayerModel> players;
+        List<GooseGame.Presentation.WPF.Models.PlayerModel> players;
 
         public MainMenu()
         {

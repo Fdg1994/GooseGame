@@ -27,11 +27,11 @@ namespace GooseGame.Data.Services
             };
         }
 
-        public Player GetPlayer()
+        public PlayerModel GetPlayer()
         {
             var entity = GetPlayerFromDB();
 
-            var model = mapper.Map<Player>(entity);
+            var model = mapper.Map<PlayerModel>(entity);
 
             return model;
         }

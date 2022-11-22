@@ -2,7 +2,7 @@
 {
     public class Well : ISquare
     {
-        public void HandlePlayer(Player player)
+        public void HandlePlayer(PlayerModel player)
         {
             string wellSquareString = "You fell in a well!";
             Console.WriteLine(wellSquareString);

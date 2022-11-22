@@ -12,7 +12,7 @@ namespace GooseGame.Data.Entities
         [Key]
         public int Id { get; set; }
         public DateTime StartDateTime { get; set; }
-        public TimeOnly EndTime { get; set; }
+        public DateTime EndTime { get; set; }
         public int PlayerEntityId { get; set; }
         public PlayerEntity Winner { get; set; }
         public int AmountOfThrows { get; set; }

@@ -2,7 +2,7 @@
 {
     internal class Maze : ISquare
     {
-        public void HandlePlayer(Player player)
+        public void HandlePlayer(PlayerModel player)
         {
             string mazeSquareString = "You got lost in the maze!";
             Console.WriteLine(mazeSquareString);
