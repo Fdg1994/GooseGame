@@ -1,6 +1,6 @@
-﻿using GooseGame.Business.SquareFactory;
-using GooseGame.Business.Squares;
-using GooseGame.Data.Entities;
+﻿using GooseGame.Business.Squares;
+
+namespace GooseGame.Business;
 
 public class Gameboard
 {
@@ -34,20 +34,20 @@ public class Gameboard
         {
             if (arrayGooseSquares.Contains(i))
             {
-                Squares.Add(SquareFactory.CreateSquare(SquareType.Goose));
+                Squares.Add(SquareFactory.SquareFactory.CreateSquare(SquareType.Goose));
             }
             else
             {
-                Squares.Add(SquareFactory.CreateSquare(SquareType.Default));
+                Squares.Add(SquareFactory.SquareFactory.CreateSquare(SquareType.Default));
             }
         }
 
-        Squares[bridgeSquare] = SquareFactory.CreateSquare(SquareType.Bridge);
-        Squares[innSquare] = SquareFactory.CreateSquare(SquareType.Inn);
-        Squares[wellSquare] = SquareFactory.CreateSquare(SquareType.Well);
-        Squares[mazeSquare] = SquareFactory.CreateSquare(SquareType.Maze);
-        Squares[prisonSquare] = SquareFactory.CreateSquare(SquareType.Prison);
-        Squares[deathSquare] = SquareFactory.CreateSquare(SquareType.Death);
-        Squares[endSquare] = SquareFactory.CreateSquare(SquareType.End);
+        Squares[bridgeSquare] = SquareFactory.SquareFactory.CreateSquare(SquareType.Bridge);
+        Squares[innSquare] = SquareFactory.SquareFactory.CreateSquare(SquareType.Inn);
+        Squares[wellSquare] = SquareFactory.SquareFactory.CreateSquare(SquareType.Well);
+        Squares[mazeSquare] = SquareFactory.SquareFactory.CreateSquare(SquareType.Maze);
+        Squares[prisonSquare] = SquareFactory.SquareFactory.CreateSquare(SquareType.Prison);
+        Squares[deathSquare] = SquareFactory.SquareFactory.CreateSquare(SquareType.Death);
+        Squares[endSquare] = SquareFactory.SquareFactory.CreateSquare(SquareType.End);
     }
 }

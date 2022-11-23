@@ -1,8 +1,13 @@
-﻿using System.Media;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Media;
 using System.Windows;
+using System.Windows.Controls;
+using GooseGame.Business;
+using GooseGame.Business.Squares;
+using GooseGame.Presentation.WPF.ViewModels;
 
-
-namespace Goose_Game
+namespace GooseGame.Presentation.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -10,13 +15,19 @@ namespace Goose_Game
 
     public partial class MainWindow : Window
     {
-        public static SoundPlayer soundPlayer = new SoundPlayer(GooseGame.Presentation.WPF.Properties.Resources.midnight_123895);
+        public static SoundPlayer soundPlayer = new(Properties.Resources.midnight_123895);
+        private MainWindowViewModel vm = new();
+
+        public IList<ISquare> Squares { get; }
+
 
         public MainWindow()
         {
             InitializeComponent();
-            soundPlayer.PlayLooping();
+           // soundPlayer.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
+            MyGrid.DataContext = vm;
+            Squares = Gameboard.GetInstance().Squares;
         }
 
         private void Mute(object sender, RoutedEventArgs e)
@@ -28,9 +39,14 @@ namespace Goose_Game
 
         private void Play(object sender, RoutedEventArgs e)
         {
-            soundPlayer.PlayLooping();
+            //soundPlayer.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
             BtnMute.Visibility = Visibility.Visible;
+        }
+
+        private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            vm.MovePlayer(vm.Player1);
         }
     }
 }
