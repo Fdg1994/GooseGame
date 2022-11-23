@@ -1,6 +1,6 @@
-﻿using GooseGame.Data.NewEntities;
+﻿using GooseGame.Business.Services;
+using GooseGame.Data.NewEntities;
 using GooseGame.Data.Repository;
-using GooseGame.Data.Services;
 
 namespace GooseGame.Business
 {

@@ -1,12 +1,7 @@
 ﻿using AutoMapper;
 using GooseGame.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GooseGame.Data.Services
+namespace GooseGame.Business.Services
 {
     internal class MyAutoMapperProfile : Profile
     {

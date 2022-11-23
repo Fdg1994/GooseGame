@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
 using GooseGame.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
-
-namespace GooseGame.Data.Services
+namespace GooseGame.Business.Services
 {
     internal class BusinessService
     {

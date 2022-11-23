@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Media;
 using System.Windows;
+using System.Windows.Controls;
+using GooseGame.Business;
 using GooseGame.Business.Squares;
 using GooseGame.Presentation.WPF.ViewModels;
 
@@ -12,8 +15,8 @@ namespace GooseGame.Presentation.WPF
 
     public partial class MainWindow : Window
     {
-        public static SoundPlayer soundPlayer = new SoundPlayer(GooseGame.Presentation.WPF.Properties.Resources.midnight_123895);
-        private MainMenuViewModel vm = new MainMenuViewModel();
+        public static SoundPlayer soundPlayer = new(Properties.Resources.midnight_123895);
+        private MainWindowViewModel vm = new();
 
         public IList<ISquare> Squares { get; }
 
@@ -23,8 +26,7 @@ namespace GooseGame.Presentation.WPF
             InitializeComponent();
            // soundPlayer.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
-            DataContext = vm;
-            
+            MyGrid.DataContext = vm;
             Squares = Gameboard.GetInstance().Squares;
         }
 
@@ -40,6 +42,11 @@ namespace GooseGame.Presentation.WPF
             //soundPlayer.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
             BtnMute.Visibility = Visibility.Visible;
+        }
+
+        private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            vm.MovePlayer(vm.Player1);
         }
     }
 }

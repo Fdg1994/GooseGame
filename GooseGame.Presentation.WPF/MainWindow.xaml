@@ -3,16 +3,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:GooseGame.Presentation.WPF.ViewModels"
+        xmlns:viewModels="clr-namespace:GooseGame.Presentation.WPF.ViewModels"
         mc:Ignorable="d"
 
         Title="MainWindow" Height="450" Width="800"
         WindowState="Maximized">
-    <Grid>
-        <Grid.DataContext>
-            <vm:MainMenuViewModel />
-        </Grid.DataContext>
-
+    <Grid x:Name="MyGrid">
         <Grid.Background>
             <ImageBrush ImageSource="Resources/Images/PrisonBreakMap.png" />
         </Grid.Background>
@@ -64,9 +60,8 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-
-        <Image Name="Player1" Source="Resources/Images/PLAYER1.png"
-               Grid.Row="{Binding VM.player1.X}" Grid.Column="{Binding VM.player1.Y}"
+        <Image Source="{Binding Player1.Image}"
+               Grid.Row="{Binding Player1.X}" Grid.Column="{Binding Player1.Y}"
                VerticalAlignment="Center"
                HorizontalAlignment="Center" />
 
@@ -79,17 +74,18 @@
                 Grid.Row="9"
                 Grid.RowSpan="3" Margin="16,0,6,21">
 
-            <Image Source="Resources/Images/Final Roll Button.png" Height="78" Width="190">
+            <Image Source="Resources/Images/Final Roll Button.png" Height="78" Width="190" MouseDown="Image_MouseDown">
             </Image>
         </Button>
         <Label
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             FontSize="25"
-                Background="Transparent"
-                Grid.Column="13"
-                Grid.Row="5"
-                Grid.RowSpan="3"
+            Background="Transparent"
+            Grid.Column="13"
+            Grid.Row="5"
+            Grid.RowSpan="3"
+            Name ="LogWindow"
             Content="6" />
 
         <Label
