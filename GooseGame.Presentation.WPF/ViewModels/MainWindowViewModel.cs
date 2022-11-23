@@ -1,7 +1,8 @@
-﻿using System;
-using GooseGame.Business;
-using System.Collections.ObjectModel;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 //VIEWMODEL ALS JE IETS WILT DOEN IN DE BUSINESS
 namespace GooseGame.Presentation.WPF.ViewModels

@@ -1,3 +1,7 @@
+
+﻿using GooseGame.Business.SquareFactory;
+using GooseGame.Business.Squares;
+using GooseGame.Data.NewEntities;
 ﻿using GooseGame.Business.Squares;
 
 namespace GooseGame.Business;

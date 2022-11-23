@@ -1,3 +1,5 @@
+
+﻿using GooseGame.Data.Database;
 ﻿using GooseGame.Business.Services;
 using GooseGame.Data.NewEntities;
 using GooseGame.Data.Repository;
@@ -7,32 +9,30 @@ namespace GooseGame.Business
     public class Game
     {
         BaseRepository _repo;
-        BusinessService service = new BusinessService();
+        BusinessService _service;
+        
         public int Id { get; set; }
         public List<PlayerModel>? Players { get; set; }
         public static int Turns { get; set; }
         public static bool IsDone { get; set; }
         public DateTime StartDateTime { get; set; }
-        public TimeOnly EndTime { get; set; }
+        public DateTime EndTime { get; set; }
         public PlayerModel Winner { get; set; }
         public Game()
         {
-            _repo = new();
+            _repo = new BaseRepository();
+            _service = new BusinessService();
             Players = new List<PlayerModel>();
             Players = AddPlayers();
         }
 
         public void StartGame()
         {
-            //_repo.AddPlayer(new Player
-            //{
-            //    Name = "Ken"
-            //});
-
             while (IsDone == false)
             {
                 HandleTurns(Players);
             }
+            _repo.AddGame(_service.GetGameToDB(this));
         }
 
         private void HandleTurns(List<PlayerModel> Players)
@@ -117,8 +117,10 @@ namespace GooseGame.Business
         {
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                Players.Add(new PlayerModel { Name = i.ToString()});
+                Players.Add(_service.GetPlayerModel());
+
                 string askNameString = $"Hello player {Players[i].Name}!";
+                _repo.AddPlayer(_service.GetPlayerModelToDB(Players[i]));
             }
             return Players;
         }
