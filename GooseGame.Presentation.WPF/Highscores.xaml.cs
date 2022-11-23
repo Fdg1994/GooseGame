@@ -1,6 +1,6 @@
 using System.Windows;
 
-namespace Goose_Game
+namespace GooseGame.Presentation.WPF
 {
     /// <summary>
     /// Interaction logic for Highscores.xaml

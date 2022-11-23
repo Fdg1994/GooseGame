@@ -1,12 +1,10 @@
-﻿using GooseGame.Presentation.WPF.Models;
-using GooseGame.Presentation.WPF.ViewModels;
-using System.Collections.Generic;
-using System.Media;
+﻿using System.Media;
 using System.Windows;
+using GooseGame.Presentation.WPF.ViewModels;
 
 //Als hier using GooseGame.Business staat klopt het niet :)
 //VISUEEL
-namespace Goose_Game
+namespace GooseGame.Presentation.WPF
 {
     /// <summary>
     /// Interaction logic for MainMenu.xaml
@@ -16,31 +14,13 @@ namespace Goose_Game
     {
         
         public static SoundPlayer soundPlayer = new SoundPlayer(GooseGame.Presentation.WPF.Properties.Resources.creepy_music_box_halloween_music_horror_scary_spooky_dark_ambient_118577);
-        MainMenuViewModel vm;
-        List<GooseGame.Presentation.WPF.Models.PlayerModel> players;
+        MainWindowViewModel vm;
 
         public MainMenu()
         {
-            soundPlayer.PlayLooping();
+            //soundPlayer.PlayLooping();
             InitializeComponent();
             BtnPlay.Visibility = Visibility.Collapsed;
-
-            vm = new MainMenuViewModel();
-            players = vm.GetPlayerList();
-            vm.SetPlayerPosition(2, 5);
-        }
-
-        //DUMMY
-        private void ButtonHasBeenClicked()
-        {
-            vm.DoeIets();
-            DrawPlayer();
-        }
-
-        //DUMMY
-        private void DrawPlayer()
-        {
-            //Draw Player
         }
 
         private void Play_Game(object sender, RoutedEventArgs e)

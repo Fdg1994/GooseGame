@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+
 using GooseGame.Business;
 using GooseGame.Data.NewEntities;
 using System;
@@ -7,7 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GooseGame.Data.Services
+using GooseGame.Data.Entities;
+
+
+namespace GooseGame.Business.Services
 {
     internal class MyAutoMapperProfile : Profile
     {

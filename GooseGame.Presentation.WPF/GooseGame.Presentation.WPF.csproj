@@ -8,14 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Final Roll Button.png" />
-    <None Remove="ParchmentLabel2.png" />
-    <None Remove="play.png" />
-    <None Remove="PLAYER1.png" />
-    <None Remove="PLAYER2.png" />
-    <None Remove="PLAYER3.png" />
-    <None Remove="PLAYER4.png" />
-    <None Remove="PrisonBreakMap.png" />
     <None Remove="Resources\Images\1Player button.png" />
     <None Remove="Resources\Images\2player button.png" />
     <None Remove="Resources\Images\3Player button.png" />
@@ -60,14 +52,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Final Roll Button.png" />
-    <Resource Include="ParchmentLabel2.png" />
-    <Resource Include="play.png" />
-    <Resource Include="PLAYER1.png" />
-    <Resource Include="PLAYER2.png" />
-    <Resource Include="PLAYER3.png" />
-    <Resource Include="PLAYER4.png" />
-    <Resource Include="PrisonBreakMap.png" />
     <Resource Include="Resources\Images\1Player button.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

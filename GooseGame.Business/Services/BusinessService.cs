@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+
 using GooseGame.Business;
 using GooseGame.Data.NewEntities;
 using GooseGame.Data.Repository;
@@ -9,6 +10,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace GooseGame.Data.Services
+
+using GooseGame.Data.Entities;
+
+namespace GooseGame.Business.Services
+
 {
     internal class BusinessService
     {

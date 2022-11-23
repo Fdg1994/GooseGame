@@ -1,7 +1,8 @@
+
 ﻿using GooseGame.Data.Database;
+﻿using GooseGame.Business.Services;
 using GooseGame.Data.NewEntities;
 using GooseGame.Data.Repository;
-using GooseGame.Data.Services;
 
 namespace GooseGame.Business
 {
@@ -34,7 +35,7 @@ namespace GooseGame.Business
             _repo.AddGame(_service.GetGameToDB(this));
         }
 
-        private void HandleTurns(List<PlayerModel>? Players)
+        private void HandleTurns(List<PlayerModel> Players)
         {
             foreach (PlayerModel player in Players)
             {
@@ -117,6 +118,7 @@ namespace GooseGame.Business
             for (int i = 0; i < numberOfPlayers; i++)
             {
                 Players.Add(_service.GetPlayerModel());
+
                 string askNameString = $"Hello player {Players[i].Name}!";
                 _repo.AddPlayer(_service.GetPlayerModelToDB(Players[i]));
             }

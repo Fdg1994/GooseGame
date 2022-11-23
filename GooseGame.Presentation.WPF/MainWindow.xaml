@@ -1,14 +1,16 @@
-﻿<Window x:Class="Goose_Game.MainWindow"
+﻿<Window x:Class="GooseGame.Presentation.WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:GooseGame.Presentation.WPF.ViewModels"
         mc:Ignorable="d"
+
         Title="MainWindow" Height="450" Width="800"
         WindowState="Maximized">
-    <Grid>
+    <Grid x:Name="MyGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="/PrisonBreakMap.png"/>
+            <ImageBrush ImageSource="Resources/Images/PrisonBreakMap.png" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="24*">
@@ -58,10 +60,10 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image Name="Player1" Source="/PLAYER1.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player2" Source="/PLAYER2.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player3" Source="/PLAYER3.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player4" Source="/PLAYER4.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Image Source="{Binding Player1.Image}"
+               Grid.Row="{Binding Player1.X}" Grid.Column="{Binding Player1.Y}"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center" />
 
         <Button
             HorizontalAlignment="Center"
@@ -72,17 +74,18 @@
                 Grid.Row="9"
                 Grid.RowSpan="3" Margin="16,0,6,21">
 
-            <Image Source="/Final Roll Button.png" Height="78" Width="190">
+            <Image Source="Resources/Images/Final Roll Button.png" Height="78" Width="190" MouseDown="Image_MouseDown">
             </Image>
         </Button>
         <Label
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             FontSize="25"
-                Background="Transparent"
-                Grid.Column="13"
-                Grid.Row="5"
-                Grid.RowSpan="3"
+            Background="Transparent"
+            Grid.Column="13"
+            Grid.Row="5"
+            Grid.RowSpan="3"
+            Name ="LogWindow"
             Content="6" />
 
         <Label
@@ -105,7 +108,7 @@
                 Grid.Row="10"
                 Grid.RowSpan="1">
 
-            <Image Source="/Mute button.png">
+            <Image Source="Resources/Images/Mute button.png">
             </Image>
         </Button>
         <Button
@@ -119,7 +122,7 @@
                 Grid.Row="10"
                 Grid.RowSpan="1">
 
-            <Image Source="/play.png">
+            <Image Source="Resources/Images/play.png">
             </Image>
         </Button>
     </Grid>
