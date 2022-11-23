@@ -43,9 +43,9 @@ public class PlayerModel : INotifyPropertyChanged
 
     public int TurnsSkip { get; set; }
 
-    public int X => (Position / 8) + 2;
+    public int X => (Position % 8) + 1;
 
-    public int Y => (Position % 8) + 1;
+    public int Y => (Position / 8) + 2;
 
     public void MovePlayer(int roll)
     {

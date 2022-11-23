@@ -8,5 +8,6 @@ namespace GooseGame.Presentation.WPF.ViewModels
 {
     internal class PlayerSelectionViewModel
     {
+
     }
 }

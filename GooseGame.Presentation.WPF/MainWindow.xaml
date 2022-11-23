@@ -60,7 +60,7 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image Source="{Binding Player1.Image}"
+        <Image x:Name="Pion1" Source="{Binding Player1.Image}"
                Grid.Row="{Binding Player1.X}" Grid.Column="{Binding Player1.Y}"
                VerticalAlignment="Center"
                HorizontalAlignment="Center" />

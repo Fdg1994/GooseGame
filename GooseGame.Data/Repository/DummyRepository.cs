@@ -9,7 +9,7 @@ namespace GooseGame.Data.Repository
 
         public void AddPlayer(Player player)
         {
-            ctx.Players.Add(player);
+            //ctx.Players.Add(player);
             ctx.SaveChanges();
         }
 

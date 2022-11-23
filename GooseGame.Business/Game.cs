@@ -114,7 +114,7 @@ namespace GooseGame.Business
             return turnSkipString;
         }
 
-        private List<PlayerModel> AddPlayers(int numberOfPlayers = 3)
+        private List<PlayerModel> AddPlayers(int numberOfPlayers =1)
         {
             for (int i = 0; i < numberOfPlayers; i++)
             {

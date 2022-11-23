@@ -46,7 +46,7 @@ namespace GooseGame.Presentation.WPF
 
         private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            vm.MovePlayer(vm.Player1);
+            vm.MovePlayer(vm.Player1, Pion1);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 //VIEWMODEL ALS JE IETS WILT DOEN IN DE BUSINESS
 namespace GooseGame.Presentation.WPF.ViewModels
@@ -14,6 +15,9 @@ namespace GooseGame.Presentation.WPF.ViewModels
         private readonly Game _game;
         public ObservableCollection<PlayerModel> Players { get; set; }
         public PlayerModel Player1 { get; set; }
+        public PlayerModel Player2 { get; set; }
+        public PlayerModel Player3 { get; set; }
+        public PlayerModel Player4 { get; set; }
 
         public MainWindowViewModel()
         {
@@ -22,10 +26,12 @@ namespace GooseGame.Presentation.WPF.ViewModels
             Player1 = new PlayerModel { Position = 1 };
         }
 
-        public void MovePlayer(PlayerModel player)
+        public void MovePlayer(PlayerModel player, Image image)
         {
             int sum = player.RollDie().Sum();
             player.MovePlayer(sum);
+            Grid.SetColumn(image, player.X);
+            Grid.SetRow(image, player.Y);
         }
     }
 }
