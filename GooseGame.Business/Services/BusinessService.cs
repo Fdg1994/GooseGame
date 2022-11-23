@@ -9,9 +9,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace GooseGame.Data.Services
+using global::GooseGame.Business.Services;
 
-using GooseGame.Data.Entities;
 
 namespace GooseGame.Business.Services
 

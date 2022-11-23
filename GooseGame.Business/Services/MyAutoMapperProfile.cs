@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using GooseGame.Data.Entities;
+using GooseGame.Data.NewEntities;
 
 
 namespace GooseGame.Business.Services
