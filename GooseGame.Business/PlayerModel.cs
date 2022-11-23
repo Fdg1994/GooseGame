@@ -1,22 +1,51 @@
 ﻿using GooseGame.Business.Squares;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-public class PlayerModel
+public class PlayerModel : INotifyPropertyChanged
 {
     public int Id { get; set; }
     public int Position { get; set; }
+
+    private int x;
+
+    public int X
+    {
+        get { return x; }
+        set
+        {
+            x = value;
+            NotifyPropertyChanged(nameof(x));
+        }
+    }
+
+    private int y;
+
+    public int Y
+    {
+        get { return y; }
+        set
+        {
+            y = value;
+            NotifyPropertyChanged(nameof(y));
+        }
+    }
+
     public bool FirstThrow { get; set; }
     public bool StuckInWell { get; set; }
     public int CurrentRoll { get; set; }
     public int TurnsSkip { get; set; }
     public int PreviousPosition { get; set; }
     public string Name { get; set; }
-   
 
     public PlayerModel()
     {
         FirstThrow = true;
         Position = 1;
+        X = 5;
     }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
 
     public int[] RollDie()
     {
@@ -27,6 +56,11 @@ public class PlayerModel
         Console.WriteLine($"Rolled a {dice[0]} and {dice[1]}");
         CurrentRoll = dice[0] + dice[1];
         return dice;
+    }
+
+    private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
     public ISquare CurrentSquare

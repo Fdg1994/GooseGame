@@ -24,10 +24,10 @@ namespace GooseGame.Business
 
         public void StartGame()
         {
-            _repo.AddPlayer(new Player
-            {
-                Name = "Ken"
-            });
+            //_repo.AddPlayer(new Player
+            //{
+            //    Name = "Ken"
+            //});
 
             while (IsDone == false)
             {
@@ -35,7 +35,7 @@ namespace GooseGame.Business
             }
         }
 
-        private void HandleTurns(List<PlayerModel>? Players)
+        private void HandleTurns(List<PlayerModel> Players)
         {
             foreach (PlayerModel player in Players)
             {
@@ -117,7 +117,7 @@ namespace GooseGame.Business
         {
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                Players.Add(new PlayerModel());
+                Players.Add(new PlayerModel { Name = i.ToString()});
                 string askNameString = $"Hello player {Players[i].Name}!";
             }
             return Players;

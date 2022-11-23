@@ -21,7 +21,7 @@ namespace Goose_Game
 
         public MainMenu()
         {
-            soundPlayer.PlayLooping();
+            //soundPlayer.PlayLooping();
             InitializeComponent();
             BtnPlay.Visibility = Visibility.Collapsed;
 

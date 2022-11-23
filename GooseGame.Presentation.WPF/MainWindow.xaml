@@ -3,12 +3,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:VM="clr-namespace:GooseGame.Presentation.WPF.ViewModels"
         mc:Ignorable="d"
+
         Title="MainWindow" Height="450" Width="800"
         WindowState="Maximized">
     <Grid>
+        <Grid.DataContext>
+            <VM:MainMenuViewModel />
+        </Grid.DataContext>
+
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/Images/PrisonBreakMap.png"/>
+            <ImageBrush ImageSource="Resources/Images/PrisonBreakMap.png" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="24*">
@@ -58,10 +64,11 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image Name="Player1" Source="Resources/Images/PLAYER1.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player2" Source="Resources/Images/PLAYER2.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player3" Source="Resources/Images/PLAYER3.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image Name="Player4" Source="Resources/Images/PLAYER4.png" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+        <Image Name="Player1" Source="Resources/Images/PLAYER1.png"
+               Grid.Row="{Binding VM.player1.X}" Grid.Column="{Binding VM.player1.Y}"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center" />
 
         <Button
             HorizontalAlignment="Center"

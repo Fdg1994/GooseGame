@@ -2,6 +2,7 @@
 using GooseGame.Presentation.WPF.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,16 @@ namespace GooseGame.Presentation.WPF.ViewModels
     public class MainMenuViewModel
     {
         Game game;
+
+        public ObservableCollection<PlayerModel> Players { get; set; }
+        public PlayerModel player1 { get; set; } 
+
         public MainMenuViewModel()
         {
             game = new Game();
+            Players = new ObservableCollection<PlayerModel>(game.Players);
+            player1 = new PlayerModel { X = 5, Y = 7};
+
         }
 
         public void SetPlayerPosition(int id, int pos)
