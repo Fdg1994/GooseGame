@@ -1,12 +1,10 @@
-﻿using GooseGame.Business;
-using GooseGame.Business.Squares;
-using GooseGame.Presentation.WPF.ViewModels;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Media;
 using System.Windows;
+using GooseGame.Business.Squares;
+using GooseGame.Presentation.WPF.ViewModels;
 
-namespace Goose_Game
+namespace GooseGame.Presentation.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
