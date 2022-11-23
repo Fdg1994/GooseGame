@@ -1,12 +1,13 @@
-﻿using System;
+﻿using GooseGame.Data.NewEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GooseGame.Data.NewEntities
+namespace GooseGame.Business
 {
-    public class PlayedGame
+    internal class PlayedGameModel
     {
         public int Id { get; set; }
         public int PlayerId { get; set; }

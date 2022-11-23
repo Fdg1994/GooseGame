@@ -12,5 +12,11 @@ namespace GooseGame.Data.Repository
             ctx.Players.Add(player);
             ctx.SaveChanges();
         }
+
+        public void AddGame(PlayedGame game)
+        {
+            ctx.PlayedGames.Add(game);
+            ctx.SaveChanges();
+        }
     }
 }

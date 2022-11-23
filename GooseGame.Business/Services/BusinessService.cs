@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GooseGame.Business;
 using GooseGame.Data.NewEntities;
 using GooseGame.Data.Repository;
 using System;
@@ -29,12 +30,17 @@ namespace GooseGame.Data.Services
             };
         }
 
-        public Player GetPlayerModelToDB()
+        public Player GetPlayerModelToDB(PlayerModel model)
         {
-            var model = GetPlayerModel();
-
             var entity = mapper.Map<Player>(model);
             
+            return entity;
+        }
+
+        public PlayedGame GetGameToDB(Game game)
+        {
+            var entity = mapper.Map<PlayedGame>(game);
+
             return entity;
         }
     }

@@ -7,29 +7,31 @@ namespace GooseGame.Business
 {
     public class Game
     {
-        BaseRepository _repo = new BaseRepository();
-        BusinessService service = new BusinessService();
+        BaseRepository _repo;
+        BusinessService _service;
         
         public int Id { get; set; }
         public List<PlayerModel>? Players { get; set; }
         public static int Turns { get; set; }
         public static bool IsDone { get; set; }
         public DateTime StartDateTime { get; set; }
-        public TimeOnly EndTime { get; set; }
+        public DateTime EndTime { get; set; }
         public PlayerModel Winner { get; set; }
         public Game()
         {
+            _repo = new BaseRepository();
+            _service = new BusinessService();
             Players = new List<PlayerModel>();
             Players = AddPlayers();
         }
 
         public void StartGame()
         {
-
             while (IsDone == false)
             {
                 HandleTurns(Players);
             }
+            _repo.AddGame(_service.GetGameToDB(this));
         }
 
         private void HandleTurns(List<PlayerModel>? Players)
@@ -110,13 +112,13 @@ namespace GooseGame.Business
             return turnSkipString;
         }
 
-        private List<PlayerModel> AddPlayers(int numberOfPlayers = 2)
+        private List<PlayerModel> AddPlayers(int numberOfPlayers = 3)
         {
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                Players.Add(service.GetPlayerModel());
+                Players.Add(_service.GetPlayerModel());
                 string askNameString = $"Hello player {Players[i].Name}!";
-                _repo.AddPlayer(service.GetPlayerModelToDB());
+                _repo.AddPlayer(_service.GetPlayerModelToDB(Players[i]));
             }
             return Players;
         }
