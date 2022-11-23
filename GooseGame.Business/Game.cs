@@ -117,7 +117,7 @@ namespace GooseGame.Business
         {
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                Players.Add(service.GetPlayer());
+                Players.Add(new PlayerModel());
                 string askNameString = $"Hello player {Players[i].Name}!";
             }
             return Players;

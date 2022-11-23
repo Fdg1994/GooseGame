@@ -7,7 +7,7 @@
         Title="Highscores" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/ParchmentLabel2.png" />
+            <ImageBrush ImageSource="Resources/Images/ParchmentLabel2.png" />
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition>
@@ -50,7 +50,7 @@
                 Grid.Row="10"
                 Grid.RowSpan="1" Height="44" Width="51">
 
-            <Image Source="/Mute button.png" Height="56" Width="51">
+            <Image Source="Resources/Images/Mute button.png" Height="56" Width="51">
             </Image>
         </Button>
         <Button
@@ -64,7 +64,7 @@
                 Grid.Row="10"
                 Grid.RowSpan="1" Height="74" Width="51">
 
-            <Image Source="/play.png">
+            <Image Source="Resources/Images/play.png">
             </Image>
         </Button>
     </Grid>
