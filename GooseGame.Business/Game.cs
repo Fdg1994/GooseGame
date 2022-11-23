@@ -4,6 +4,7 @@
 using GooseGame.Data.NewEntities;
 using GooseGame.Data.Repository;
 
+
 namespace GooseGame.Business
 {
     public class Game
@@ -32,7 +33,7 @@ namespace GooseGame.Business
             {
                 HandleTurns(Players);
             }
-            _repo.AddGame(_service.GetGameToDB(this));
+           // _repo.AddGame(_service.GetGameToDB(this));
         }
 
         private void HandleTurns(List<PlayerModel> Players)
