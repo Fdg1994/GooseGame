@@ -10,7 +10,7 @@
         WindowState="Maximized">
     <Grid x:Name="MyGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/Images/PrisonBreakMap.png" />
+            <ImageBrush ImageSource="Resources/Images/Prison break new.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="24*">
@@ -59,11 +59,6 @@
             <ColumnDefinition Width="43*">
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        <Image x:Name="Pion1" Source="{Binding Player1.Image}"
-               Grid.Row="{Binding Player1.X}" Grid.Column="{Binding Player1.Y}"
-               VerticalAlignment="Center"
-               HorizontalAlignment="Center" />
 
         <Button
             HorizontalAlignment="Center"
@@ -125,5 +120,87 @@
             <Image Source="Resources/Images/play.png">
             </Image>
         </Button>
+        <Image 
+            Source="Resources/Images/Door_Metal_Gray_B_1x1.png"
+            Grid.Column="3" Grid.Row="2" Grid.ColumnSpan ="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.406"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="7" Grid.Row="2">
+        </Image>
+        <Image Source="Resources/Images/Tunnel.png" Grid.Column="8" Grid.Row="2" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="43.658"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="Resources/Images/Tunnel.png" Grid.Column="5" Grid.Row="3" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="43.658"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="Resources/Images/Spiderweb.png" Grid.Column="5" Grid.Row="4" RenderTransformOrigin="0.5,0.5">
+        </Image>
+        <Image Source="Resources/Images/Wall.png" Grid.Column="2" Grid.Row="5" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-134.498"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="Resources/Images/GooseMaze.png" Grid.Column="7" Grid.Row="7">
+        </Image>
+        <Image Source="Resources/Images/FinalGuard.png" Grid.Column="7" Grid.Row="9">
+        </Image>
+        <Image Source="Resources/Images/Skeleton.png" Grid.Column="6" Grid.Row="8">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="8" Grid.Row="3">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="3" Grid.Row="3">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="4" Grid.Row="4">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="9" Grid.Row="4">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="6" Grid.Row="5">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="2" Grid.Row="6">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="6" Grid.Row="6">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="8" Grid.Row="7">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="4" Grid.Row="7">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="4" Grid.Row="8">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="8" Grid.Row="8">
+        </Image>
+        <Image Source="Resources/Images/Treasure.png" Grid.Column="6" Grid.Row="9">
+        </Image>
+        <Image Source="Resources/Images/Winner.png" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2">
+        </Image>
+        <Image x:Name="Pion1" Source="{Binding Player1.Image}"
+               Grid.Row="{Binding Player1.X}" Grid.Column="{Binding Player1.Y}"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center" />
+                
     </Grid>
 </Window>
