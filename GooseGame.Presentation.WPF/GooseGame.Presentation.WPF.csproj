@@ -12,7 +12,12 @@
     <None Remove="Resources\Images\2player button.png" />
     <None Remove="Resources\Images\3Player button.png" />
     <None Remove="Resources\Images\4player button.png" />
+    <None Remove="Resources\Images\EndTile.png" />
     <None Remove="Resources\Images\Final Roll Button.png" />
+    <None Remove="Resources\Images\FinalGuard.png" />
+    <None Remove="Resources\Images\GooseGuard.png" />
+    <None Remove="Resources\Images\GooseMaze.png" />
+    <None Remove="Resources\Images\Guard.png" />
     <None Remove="Resources\Images\Highscores button.png" />
     <None Remove="Resources\Images\Mute button.png" />
     <None Remove="Resources\Images\ParchmentLabel.png" />
@@ -27,12 +32,44 @@
     <None Remove="Resources\Images\PLAYER2.png" />
     <None Remove="Resources\Images\PLAYER3.png" />
     <None Remove="Resources\Images\PLAYER4.png" />
+    <None Remove="Resources\Images\Prison break new.png" />
     <None Remove="Resources\Images\Prison break project %28NO ROLL%29.png" />
     <None Remove="Resources\Images\Prison break project empty.png" />
     <None Remove="Resources\Images\PrisonBreakMap.png" />
+    <None Remove="Resources\Images\PrisonGuard.png" />
     <None Remove="Resources\Images\ROLL %282%29.png" />
     <None Remove="Resources\Images\Roll button.png" />
+    <None Remove="Resources\Images\Skeleton.png" />
+    <None Remove="Resources\Images\Spiderweb.png" />
+    <None Remove="Resources\Images\Treasure.png" />
+    <None Remove="Resources\Images\Tunnel.png" />
+    <None Remove="Resources\Images\Wall.png" />
+    <None Remove="Resources\Images\Winner.png" />
     <None Remove="Resources\Images\—Pngtree—old parchment scroll texture_5496789.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\EndTile.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\FinalGuard.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\GooseGuard.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\GooseMaze.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Guard.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\PrisonGuard.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Wall.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -62,6 +99,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\4player button.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Skeleton.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\Final Roll Button.png">
@@ -109,6 +149,9 @@
     <Resource Include="Resources\Images\PLAYER4.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Images\Prison break new.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\Prison break project (NO ROLL).png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -122,6 +165,18 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\Roll button.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Spiderweb.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Treasure.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Tunnel.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Winner.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Images\—Pngtree—old parchment scroll texture_5496789.png">
