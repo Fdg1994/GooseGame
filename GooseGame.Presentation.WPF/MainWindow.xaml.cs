@@ -28,6 +28,7 @@ namespace GooseGame.Presentation.WPF
             BtnPlay.Visibility = Visibility.Collapsed;
             MyGrid.DataContext = vm;
             Squares = Gameboard.GetInstance().Squares;
+            vm.Init(vm.Player1, Pion1);
         }
 
         private void Mute(object sender, RoutedEventArgs e)
