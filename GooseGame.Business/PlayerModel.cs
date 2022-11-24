@@ -13,7 +13,12 @@ public class PlayerModel : INotifyPropertyChanged
     {
         FirstThrow = true;
         Position = 1;
+        X = 1;
+        Y = 1;
+        XShowOnBoard(X);
+        YShowOnBoard(Y);
         Name = "Default";
+        DrawGrid();
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
@@ -43,9 +48,65 @@ public class PlayerModel : INotifyPropertyChanged
 
     public int TurnsSkip { get; set; }
 
-    public int X => (Position % 8) + 1;
 
-    public int Y => (Position / 8) + 2;
+    public int[,] myGrid = new int[8, 8];
+
+    // public int X => XShowOnBoard(Position);
+
+    // public int Y => YShowOnBoard(Position);
+    public int _x;
+    public int _y;
+
+    public int X { get { return XShowOnBoard(Position); } set { _x = value; } }
+    public int Y { get { return YShowOnBoard(Position); } set { _y = value; } }
+
+    public void DrawGrid()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+               myGrid[j, i] = i % 2 == 0 ? i * 8 + j : (i * 8 + 8 - j) - 1;
+            }
+        }
+    }
+
+int XShowOnBoard(int location)
+{
+    DrawGrid();
+    int x = 0;
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            if (myGrid[j, i] == location)
+            {
+                x = j + 1;
+                    return x;
+            }
+        }
+    }
+        throw new Exception();
+}
+int YShowOnBoard(int location)
+{
+    DrawGrid();
+    int y = 0;
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            if (myGrid[j, i] == location)
+            {
+                y = i + 1;
+                    return y;
+            }
+        }
+    }
+        throw new Exception();
+}
+
+
 
     public void MovePlayer(int roll)
     {
