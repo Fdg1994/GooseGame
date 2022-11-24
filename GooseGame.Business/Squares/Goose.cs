@@ -13,7 +13,12 @@ namespace GooseGame.Business.Squares
         }
         public string ReturnDescription()
         {
-            string SquareMessage = "Wow! A bridge! Get to square 12!";
+            string SquareMessage = @"You've found some treasure!
+You get extra motivation
+to go on.
+You go twice as far!";
+
+
             return SquareMessage;
         }   
     }

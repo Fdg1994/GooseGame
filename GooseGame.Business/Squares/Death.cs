@@ -13,7 +13,9 @@ namespace GooseGame.Business.Squares
 
         public string ReturnDescription()
         {
-            string SquareMessage = "Wow! A bridge! Get to square 12!";
+            string SquareMessage = @"STOP RIGHT THERE YOU CRIMINAL SCUM!
+A guard has caught you.
+He's taking you back to your cell.";
             return SquareMessage;
         }
     }

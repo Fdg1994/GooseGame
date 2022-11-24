@@ -12,7 +12,11 @@ namespace GooseGame.Business.Squares
         }
         public string ReturnDescription()
         {
-            string SquareMessage = "Wow! A bridge! Get to square 12!";
+            string SquareMessage = @"A wall in the path.
+You'll need to wait
+for someone to
+lift you over!";
+
             return SquareMessage;
         }
     }

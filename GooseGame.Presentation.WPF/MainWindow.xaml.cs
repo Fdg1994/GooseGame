@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Media;
-using System.Windows;
-using System.Windows.Controls;
-using GooseGame.Business;
+﻿using GooseGame.Business;
 using GooseGame.Business.Squares;
 using GooseGame.Presentation.WPF.ViewModels;
+using System.Collections.Generic;
+using System.Media;
+using System.Windows;
 
 namespace GooseGame.Presentation.WPF
 {
@@ -20,11 +18,10 @@ namespace GooseGame.Presentation.WPF
 
         public IList<ISquare> Squares { get; }
 
-
         public MainWindow()
         {
             InitializeComponent();
-           // soundPlayer.PlayLooping();
+            // soundPlayer.PlayLooping();
             BtnPlay.Visibility = Visibility.Collapsed;
             MyGrid.DataContext = vm;
             Squares = Gameboard.GetInstance().Squares;
@@ -48,11 +45,11 @@ namespace GooseGame.Presentation.WPF
         private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             vm.MovePlayer(vm.Player1, Pion1);
-            CurrentRollParchment.Text = 
-                $"Current event: {vm.GetCurrentSpecialEvent()}\n" +
-                "Current roll:" +" "+ $"{vm.GetCurrentRoll()}";
-            UpperScroll.Text = $"Current player: {1}";
+            CurrentRollParchment.Text = @$"WHAT YOU SEE:
+{vm.GetCurrentSpecialEvent()}
 
+YOUR ROLL: {vm.GetCurrentRoll()}";
+            UpperScroll.Text = $"Current player: {1}";
         }
     }
 }

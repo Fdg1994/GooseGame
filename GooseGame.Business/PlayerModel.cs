@@ -67,8 +67,8 @@ public class PlayerModel : INotifyPropertyChanged
         // TODO: What with the edge cases? See document
         Random random = new Random();
         int[] dice = new int[2];
-        dice[0] = random.Next(1, 6);
-        dice[1] = random.Next(1, 6);
+        dice[0] = random.Next(1, 7);
+        dice[1] = random.Next(1, 7);
 
         // TODO: Add to logger and display
         string result = $"Rolled a {dice[0]} and {dice[1]} Current position: {Position + dice[0] + dice[1]}";
