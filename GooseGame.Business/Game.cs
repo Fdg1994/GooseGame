@@ -12,10 +12,11 @@ namespace GooseGame.Business
         BaseRepository _repo;
         BusinessService _service;
         
-        public int Id { get; set; }
         public List<PlayerModel>? Players { get; set; }
         public static int Turns { get; set; }
         public static bool IsDone { get; set; }
+        public int CurrentRoll { get; set; }
+        public int CurrentPlayerNumber { get; set; }
         public DateTime StartDateTime { get; set; }
         public DateTime EndTime { get; set; }
         public PlayerModel Winner { get; set; }
@@ -74,6 +75,7 @@ namespace GooseGame.Business
                 player.MovePlayer(dice[0] + dice[1]);
             }
             player.FirstThrow = false;
+            CurrentRoll = dice[0] + dice[1];
         }
 
         private bool CheckIfStuck(PlayerModel player)

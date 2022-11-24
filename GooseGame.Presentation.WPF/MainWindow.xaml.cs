@@ -48,6 +48,11 @@ namespace GooseGame.Presentation.WPF
         private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             vm.MovePlayer(vm.Player1, Pion1);
+            CurrentRollParchment.Text = 
+                $"Current event: {vm.GetCurrentSpecialEvent()}\n" +
+                "Current roll:" +" "+ $"{vm.GetCurrentRoll()}";
+            UpperScroll.Text = $"Current player: {1}";
+
         }
     }
 }

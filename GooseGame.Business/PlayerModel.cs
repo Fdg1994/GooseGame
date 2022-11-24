@@ -12,7 +12,6 @@ public class PlayerModel : INotifyPropertyChanged
     public PlayerModel()
     {
         FirstThrow = true;
-        Position = 1;
         Name = "Default";
     }
 
@@ -46,62 +45,6 @@ public class PlayerModel : INotifyPropertyChanged
 
     public int[,] myGrid = new int[8, 8];
 
-    //public int X => XShowOnBoard(Position);
-    //public int Y => YShowOnBoard(Position);
-    //public int _x;
-    //public int _y;
-
-    //public int X { get { return XShowOnBoard(Position); } }
-    //public int Y { get { return YShowOnBoard(Position); } }
-
-    //public void DrawGrid()
-    //{
-    //    for (int i = 0; i < 8; i++)
-    //    {
-    //        for (int j = 0; j < 8; j++)
-    //        {
-    //            myGrid[j, i] = i % 2 == 0 ? i * 8 + j : (i * 8 + 8 - j) - 1;
-    //        }
-    //    }
-    //}
-
-    /*int XShowOnBoard(int location)
-    {
-        DrawGrid();
-        int x = 0;
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                if (myGrid[j, i] == location)
-                {
-                    x = j + 1;
-                    return x;
-                }
-            }
-        }
-        throw new Exception();
-    }
-    int YShowOnBoard(int location)
-    {
-        DrawGrid();
-        int y = 0;
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                if (myGrid[j, i] == location)
-                {
-                    y = i + 1;
-                    return y;
-                }
-            }
-        }
-        throw new Exception();
-    }*/
-
-
-
     public void MovePlayer(int roll)
     {
         PreviousPosition = Position;
@@ -128,7 +71,7 @@ public class PlayerModel : INotifyPropertyChanged
         dice[1] = random.Next(1, 6);
 
         // TODO: Add to logger and display
-        string result = $"Rolled a {dice[0]} and {dice[1]}";
+        string result = $"Rolled a {dice[0]} and {dice[1]} Current position: {Position + dice[0] + dice[1]}";
         Debug.WriteLine(result);
 
         CurrentRoll = dice[0] + dice[1];

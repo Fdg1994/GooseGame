@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewModels="clr-namespace:GooseGame.Presentation.WPF.ViewModels"
+        xmlns:viewModels="clr-namespace:GooseGame.Presentation.WPF.ViewModels" xmlns:business="clr-namespace:GooseGame.Business;assembly=GooseGame.Business" d:DataContext="{d:DesignInstance Type=business:PlayerModel}"
         mc:Ignorable="d"
 
         Title="MainWindow" Height="450" Width="800"
@@ -72,26 +72,29 @@
             <Image Source="Resources/Images/Final Roll Button.png" Height="78" Width="190" MouseDown="Image_MouseDown">
             </Image>
         </Button>
-        <Label
+        <TextBlock
+            FontFamily="Segoe Script"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            FontSize="25"
+            FontSize="13"
             Background="Transparent"
             Grid.Column="13"
             Grid.Row="5"
             Grid.RowSpan="3"
-            Name ="LogWindow"
-            Content="6" />
+            x:Name ="CurrentRollParchment"
+            Text="{Binding Path=Player1.CurrentRoll}" />
 
-        <Label
-            FontSize="15"
+        <TextBlock
+            x:Name="UpperScroll"
+            FontFamily="Segoe Script"
+            FontSize="13"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
                 Background="Transparent"
                 Grid.Column="13"
                 Grid.Row="2"
                 Grid.RowSpan="2"
-            Content="Current player: Player 1" />
+            Text="{Binding Path=Player1.CurrentRoll}" />
         <Button
             Click="Mute"
             Name="BtnMute"
