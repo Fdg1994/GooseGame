@@ -1,6 +1,6 @@
-﻿using System.Media;
+﻿using GooseGame.Presentation.WPF.ViewModels;
+using System.Media;
 using System.Windows;
-using GooseGame.Presentation.WPF.ViewModels;
 
 //Als hier using GooseGame.Business staat klopt het niet :)
 //VISUEEL
@@ -12,9 +12,8 @@ namespace GooseGame.Presentation.WPF
     ///
     public partial class MainMenu : Window
     {
-        
         public static SoundPlayer soundPlayer = new SoundPlayer(GooseGame.Presentation.WPF.Properties.Resources.creepy_music_box_halloween_music_horror_scary_spooky_dark_ambient_118577);
-        MainWindowViewModel vm;
+        private MainWindowViewModel vm;
 
         public MainMenu()
         {

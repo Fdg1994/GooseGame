@@ -1,5 +1,4 @@
-﻿
-using GooseGame.Data.NewEntities;
+﻿using GooseGame.Data.NewEntities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GooseGame.Data.Database
@@ -13,7 +12,7 @@ namespace GooseGame.Data.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PlayerSpecialSquaresHit>().HasKey(x => new { x.PlayerId, x.SpecialSquaresHitId});
+            modelBuilder.Entity<PlayerSpecialSquaresHit>().HasKey(x => new { x.PlayerId, x.SpecialSquaresHitId });
         }
 
         public DbSet<Player> Players { get; set; }

@@ -10,6 +10,7 @@ namespace GooseGame.Business.Squares
             Debug.WriteLine(innSquareString);
             player.TurnsSkip = 1;
         }
+
         public string ReturnDescription()
         {
             string SquareMessage = @"Oh no! Massive spiderwebs!
@@ -18,6 +19,6 @@ Let's hope the owner of this web
 isn't nearby...";
 
             return SquareMessage;
-        }   
+        }
     }
 }

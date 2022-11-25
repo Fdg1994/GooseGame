@@ -1,12 +1,7 @@
 using GooseGame.Business;
-using GooseGame.Business.Squares;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Printing;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -18,9 +13,6 @@ namespace GooseGame.Presentation.WPF.ViewModels
         private readonly Game _game;
         public ObservableCollection<PlayerModel> Players { get; set; }
         public PlayerModel Player1 { get; set; }
-        public PlayerModel Player2 { get; set; }
-        public PlayerModel Player3 { get; set; }
-        public PlayerModel Player4 { get; set; }
 
         private int[,] myGrid = new int[8, 8];
 
@@ -45,9 +37,8 @@ namespace GooseGame.Presentation.WPF.ViewModels
 
         public string GetCurrentSpecialEvent()
         {
-            return Player1.CurrentSquare.ReturnDescription().ToString();
+            return Player1.CurrentSquare.ReturnDescription();
         }
-
 
         public void Init(PlayerModel player, System.Windows.Controls.Image image)
         {
@@ -58,8 +49,8 @@ namespace GooseGame.Presentation.WPF.ViewModels
         public void MovePlayer(PlayerModel player, System.Windows.Controls.Image image)
         {
             int[] dice = player.RollDie();
-                int sum = dice.Sum();
-            if(player.FirstThrow ==true)
+            int sum = dice.Sum();
+            if (player.FirstThrow == true)
             {
                 if (dice[0] == 5 && dice[1] == 4 || dice[0] == 4 && dice[1] == 5)
                 {
@@ -83,17 +74,22 @@ namespace GooseGame.Presentation.WPF.ViewModels
                     player.FirstThrow = false;
                 }
             }
-            else
+            else if (player.Position + sum != 63)
             {
                 player.MovePlayer(sum);
                 Grid.SetColumn(image, ShowOnBoard(player.Position).Item1);
                 Grid.SetRow(image, ShowOnBoard(player.Position).Item2);
             }
-
+            else
+            {
+                player.MovePlayer(sum);
+                Grid.SetColumn(image, ShowOnBoard(player.Position).Item1);
+                Grid.SetRow(image, ShowOnBoard(player.Position).Item2);
+                Application.Current.Shutdown();
+            }
         }
 
-
-        Tuple<int, int> ShowOnBoard(int location)
+        private Tuple<int, int> ShowOnBoard(int location)
         {
             for (int i = 0; i < 8; i++)
             {

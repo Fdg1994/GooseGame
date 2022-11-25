@@ -10,6 +10,7 @@ namespace GooseGame.Business.Squares
             Debug.WriteLine(mazeSquareString);
             player.SetPlayerPosition(39);
         }
+
         public string ReturnDescription()
         {
             string SquareMessage = @"You've completely

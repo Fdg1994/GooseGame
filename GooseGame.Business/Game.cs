@@ -1,25 +1,18 @@
-
-﻿using GooseGame.Data.Database;
-﻿using GooseGame.Business.Services;
-using GooseGame.Data.NewEntities;
+using GooseGame.Business.Services;
 using GooseGame.Data.Repository;
-
 
 namespace GooseGame.Business
 {
     public class Game
     {
-        BaseRepository _repo;
-        BusinessService _service;
-        
+        private BaseRepository _repo;
+        private BusinessService _service;
+
         public List<PlayerModel>? Players { get; set; }
         public static int Turns { get; set; }
         public static bool IsDone { get; set; }
         public int CurrentRoll { get; set; }
-        public int CurrentPlayerNumber { get; set; }
-        public DateTime StartDateTime { get; set; }
-        public DateTime EndTime { get; set; }
-        public PlayerModel Winner { get; set; }
+
         public Game()
         {
             _repo = new BaseRepository();
@@ -34,7 +27,6 @@ namespace GooseGame.Business
             {
                 HandleTurns(Players);
             }
-           // _repo.AddGame(_service.GetGameToDB(this));
         }
 
         private void HandleTurns(List<PlayerModel> Players)
@@ -116,7 +108,7 @@ namespace GooseGame.Business
             return turnSkipString;
         }
 
-        private List<PlayerModel> AddPlayers(int numberOfPlayers =1)
+        private List<PlayerModel> AddPlayers(int numberOfPlayers = 1)
         {
             for (int i = 0; i < numberOfPlayers; i++)
             {

@@ -13,7 +13,7 @@ namespace GooseGame.Business.Squares
         public string ReturnDescription()
         {
             string SquareMessage = @"You stumble through
-the dark corridor, 
+the dark corridor,
 Looking for a way out";
             return SquareMessage;
         }

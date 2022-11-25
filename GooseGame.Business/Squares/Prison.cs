@@ -10,11 +10,11 @@ namespace GooseGame.Business.Squares
             Debug.WriteLine(prisonSquareString);
             player.TurnsSkip = 3;
         }
+
         public string ReturnDescription()
         {
             string SquareMessage = @"OH NO! A WALKING SKELETON!
 You spend three turns slaying the undead creature.";
-
 
             return SquareMessage;
         }

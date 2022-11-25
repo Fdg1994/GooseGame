@@ -16,7 +16,7 @@ namespace GooseGame.Business.Squares
         {
             string SquareMessage = @"You see a light
 at the end of the corridor.
-A fresh breeze tickles 
+A fresh breeze tickles
 your face as you realize...
 YOU'RE FREE!";
             return SquareMessage;

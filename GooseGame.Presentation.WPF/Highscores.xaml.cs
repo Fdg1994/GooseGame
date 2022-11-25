@@ -28,7 +28,7 @@ namespace GooseGame.Presentation.WPF
         }
 
         private void BackHighscores_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             MainMenu mainMenu = new MainMenu();
             Close();
         }

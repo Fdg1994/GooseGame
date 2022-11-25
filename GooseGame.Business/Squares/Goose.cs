@@ -11,6 +11,7 @@ namespace GooseGame.Business.Squares
 
             player.MovePlayer(player.CurrentRoll);
         }
+
         public string ReturnDescription()
         {
             string SquareMessage = @"You've found some treasure!
@@ -18,8 +19,7 @@ You get extra motivation
 to go on.
 You go twice as far!";
 
-
             return SquareMessage;
-        }   
+        }
     }
 }

@@ -1,32 +1,22 @@
 ﻿using AutoMapper;
-
-using GooseGame.Business;
 using GooseGame.Data.NewEntities;
-using GooseGame.Data.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-
-using global::GooseGame.Business.Services;
-
 
 namespace GooseGame.Business.Services
 
 {
     internal class BusinessService
     {
-        MapperConfiguration config = new MapperConfiguration(
+        private MapperConfiguration config = new MapperConfiguration(
             cfg => cfg.AddProfile(new MyAutoMapperProfile())
             );
 
-        IMapper mapper;
+        private IMapper mapper;
 
         public BusinessService()
         {
             mapper = config.CreateMapper();
         }
+
         public PlayerModel GetPlayerModel()
         {
             return new PlayerModel
@@ -38,7 +28,7 @@ namespace GooseGame.Business.Services
         public Player GetPlayerModelToDB(PlayerModel model)
         {
             var entity = mapper.Map<Player>(model);
-            
+
             return entity;
         }
 
@@ -50,4 +40,3 @@ namespace GooseGame.Business.Services
         }
     }
 }
-

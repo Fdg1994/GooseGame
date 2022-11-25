@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
+﻿using GooseGame.Business.Squares;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using GooseGame.Business.Squares;
 
 namespace GooseGame.Business;
 
@@ -21,7 +21,6 @@ public class PlayerModel : INotifyPropertyChanged
     public ISquare CurrentSquare => Gameboard.GetInstance().Squares[Position];
     public bool FirstThrow { get; set; }
     public int Id { get; set; }
-
     public string Name { get; set; }
 
     public int Position
@@ -42,7 +41,6 @@ public class PlayerModel : INotifyPropertyChanged
 
     public int TurnsSkip { get; set; }
 
-
     public int[,] myGrid = new int[8, 8];
 
     public void MovePlayer(int roll)
@@ -58,19 +56,16 @@ public class PlayerModel : INotifyPropertyChanged
             CurrentRoll = -CurrentRoll; //Player will move twice as much backwards if he hits a goose in reverse.
         }
 
-        //Debug.WriteLine($"Moved from {PreviousPosition} to {Position}|| {X}:{Y}");
         CurrentSquare.HandlePlayer(this);
     }
 
     public int[] RollDie()
     {
-        // TODO: What with the edge cases? See document
         Random random = new Random();
         int[] dice = new int[2];
         dice[0] = random.Next(1, 7);
         dice[1] = random.Next(1, 7);
 
-        // TODO: Add to logger and display
         string result = $"Rolled a {dice[0]} and {dice[1]} Current position: {Position + dice[0] + dice[1]}";
         Debug.WriteLine(result);
 

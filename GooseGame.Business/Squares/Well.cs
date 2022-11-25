@@ -10,6 +10,7 @@ namespace GooseGame.Business.Squares
             Debug.WriteLine(wellSquareString);
             player.StuckInWell = true;
         }
+
         public string ReturnDescription()
         {
             string SquareMessage = @"A wall in the path.
